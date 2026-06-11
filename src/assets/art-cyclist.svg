@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600" fill="none">
+  <defs>
+    <linearGradient id="ribbon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#92c3c5" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="rider" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#bedcdd"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <filter id="soften2" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
+    <filter id="grain2">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.06" intercept="0"/>
+      </feComponentTransfer>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+
+  <!-- glow behind rider -->
+  <ellipse cx="560" cy="330" rx="260" ry="200" fill="#5fa3a7" opacity="0.25" filter="url(#soften2)"/>
+
+  <!-- motion ribbons -->
+  <g stroke-linecap="round" fill="none">
+    <path d="M-40,300 C200,250 320,360 560,310" stroke="url(#ribbon)" stroke-width="26" opacity="0.55"/>
+    <path d="M-60,380 C220,340 340,430 600,380" stroke="url(#ribbon)" stroke-width="14" opacity="0.4"/>
+    <path d="M-30,230 C190,200 300,270 520,240" stroke="url(#ribbon)" stroke-width="8" opacity="0.35"/>
+  </g>
+
+  <!-- cyclist glyph -->
+  <g stroke="url(#rider)" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- wheels -->
+    <circle cx="470" cy="412" r="74" stroke-width="10"/>
+    <circle cx="712" cy="412" r="74" stroke-width="10"/>
+    <!-- frame -->
+    <path d="M470,412 L568,310 L676,318 L712,412 M568,310 L594,408 L470,412 M594,408 L676,318" stroke-width="10"/>
+    <!-- rider: leg, torso, arms, head -->
+    <path d="M594,400 L585,330 L612,252 L676,300" stroke-width="12"/>
+    <path d="M612,252 Q650,238 672,262" stroke-width="12"/>
+    <circle cx="610" cy="216" r="22" stroke-width="10"/>
+  </g>
+
+  <!-- speckle dots like generated artifacts -->
+  <g fill="#ffffff">
+    <circle cx="180" cy="160" r="3" opacity="0.5"/>
+    <circle cx="280" cy="120" r="2" opacity="0.4"/>
+    <circle cx="120" cy="320" r="2.5" opacity="0.45"/>
+    <circle cx="340" cy="470" r="3" opacity="0.35"/>
+    <circle cx="220" cy="430" r="2" opacity="0.4"/>
+  </g>
+
+  <rect width="900" height="600" filter="url(#grain2)" opacity="0.8"/>
+</svg>

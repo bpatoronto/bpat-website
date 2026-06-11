@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1280" viewBox="0 0 1920 1280" preserveAspectRatio="xMidYMid slice">
+  <!-- Golden-hour Toronto: CN Tower skyline, ring-and-post racks, a cyclist heading home. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#46415f"/>
+      <stop offset="0.38" stop-color="#8a5a6d"/>
+      <stop offset="0.62" stop-color="#d07a5e"/>
+      <stop offset="0.82" stop-color="#f0a368"/>
+      <stop offset="1" stop-color="#f8c07e"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff3d6" stop-opacity="0.95"/>
+      <stop offset="0.35" stop-color="#ffd9a0" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#ffce8f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cloudWarm" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffb289" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#ffb289" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cloudGold" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffd9a0" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#ffd9a0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cloudPlum" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6e5070" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#6e5070" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a3d3e"/>
+      <stop offset="0.5" stop-color="#0f2b2d"/>
+      <stop offset="1" stop-color="#07181a"/>
+    </linearGradient>
+    <radialGradient id="reflect" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffce8f" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#ffce8f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lampGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffe2b0" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#ffe2b0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="vignette" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2e2845" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#2e2845" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- sky -->
+  <rect width="1920" height="920" fill="url(#sky)"/>
+
+  <!-- sun glow on the horizon -->
+  <ellipse cx="1240" cy="880" rx="560" ry="330" fill="url(#sun)"/>
+  <circle cx="1240" cy="868" r="46" fill="#fff3d6" opacity="0.9"/>
+
+  <!-- painterly cloud bands -->
+  <ellipse cx="700" cy="150" rx="460" ry="56" fill="url(#cloudPlum)"/>
+  <ellipse cx="1480" cy="120" rx="380" ry="48" fill="url(#cloudPlum)"/>
+  <ellipse cx="500" cy="305" rx="430" ry="58" fill="url(#cloudWarm)" opacity="0.7"/>
+  <ellipse cx="1320" cy="240" rx="380" ry="46" fill="url(#cloudWarm)" opacity="0.55"/>
+  <ellipse cx="840" cy="470" rx="520" ry="68" fill="url(#cloudWarm)" opacity="0.8"/>
+  <ellipse cx="1580" cy="430" rx="300" ry="40" fill="url(#cloudWarm)" opacity="0.6"/>
+  <ellipse cx="300" cy="570" rx="360" ry="50" fill="url(#cloudWarm)" opacity="0.65"/>
+  <ellipse cx="1230" cy="700" rx="480" ry="38" fill="url(#cloudGold)" opacity="0.85"/>
+  <ellipse cx="980" cy="620" rx="340" ry="30" fill="url(#cloudGold)" opacity="0.55"/>
+
+  <!-- birds heading home -->
+  <g stroke="#3a2b44" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M620,268 q12,-12 24,0 q12,-12 24,0"/>
+    <path d="M712,236 q10,-10 20,0 q10,-10 20,0"/>
+    <path d="M788,282 q9,-9 18,0 q9,-9 18,0"/>
+  </g>
+
+  <!-- hazy far skyline -->
+  <path fill="#7d5364" opacity="0.55" d="M0,900 L0,840 H90 V810 H150 V850 H260 V800 H330 V860 H480 V830 H560 V870 H700 V820 H790 V856 H930 V806 H1010 V862 H1140 V826 H1240 V852 H1400 V800 H1480 V846 H1640 V816 H1730 V858 H1860 V832 H1920 V900 Z"/>
+
+  <!-- main skyline -->
+  <g fill="#3a2b44">
+    <rect x="60" y="800" width="70" height="102"/>
+    <rect x="150" y="772" width="64" height="130"/>
+    <rect x="230" y="812" width="52" height="90"/>
+    <rect x="560" y="790" width="66" height="112"/>
+    <rect x="640" y="760" width="58" height="142"/>
+    <rect x="712" y="804" width="48" height="98"/>
+    <rect x="940" y="780" width="60" height="122"/>
+    <rect x="1180" y="700" width="70" height="202"/>
+    <rect x="1262" y="640" width="84" height="262"/>
+    <rect x="1356" y="730" width="44" height="172"/>
+    <path d="M1240,902 a120,62 0 0 1 240,0 Z"/>
+    <rect x="1470" y="660" width="90" height="242"/>
+    <rect x="1572" y="736" width="64" height="166"/>
+    <rect x="1646" y="690" width="76" height="212"/>
+    <rect x="1736" y="770" width="80" height="132"/>
+    <rect x="1828" y="724" width="92" height="178"/>
+    <!-- CN Tower -->
+    <rect x="1426" y="352" width="8" height="122"/>
+    <rect x="1402" y="470" width="56" height="40" rx="14"/>
+    <rect x="1410" y="510" width="40" height="14" rx="6"/>
+    <path d="M1414,524 L1446,524 L1458,902 L1402,902 Z"/>
+  </g>
+
+  <!-- lit windows catching the sunset -->
+  <g fill="#ffd9a3" opacity="0.6">
+    <rect x="1408" y="482" width="44" height="7" rx="3.5"/>
+    <rect x="1274" y="660" width="9" height="12"/><rect x="1292" y="660" width="9" height="12"/><rect x="1310" y="660" width="9" height="12"/><rect x="1328" y="660" width="9" height="12"/>
+    <rect x="1274" y="688" width="9" height="12"/><rect x="1310" y="688" width="9" height="12"/>
+    <rect x="1292" y="716" width="9" height="12"/><rect x="1328" y="716" width="9" height="12"/>
+    <rect x="1274" y="744" width="9" height="12"/><rect x="1310" y="744" width="9" height="12"/><rect x="1328" y="744" width="9" height="12"/>
+    <rect x="1482" y="678" width="9" height="12"/><rect x="1500" y="678" width="9" height="12"/><rect x="1518" y="678" width="9" height="12"/><rect x="1536" y="678" width="9" height="12"/>
+    <rect x="1482" y="706" width="9" height="12"/><rect x="1518" y="706" width="9" height="12"/>
+    <rect x="1500" y="734" width="9" height="12"/><rect x="1536" y="734" width="9" height="12"/>
+    <rect x="1482" y="762" width="9" height="12"/><rect x="1518" y="762" width="9" height="12"/>
+    <rect x="1658" y="708" width="8" height="11"/><rect x="1674" y="708" width="8" height="11"/><rect x="1690" y="708" width="8" height="11"/>
+    <rect x="1658" y="734" width="8" height="11"/><rect x="1690" y="734" width="8" height="11"/>
+    <rect x="1674" y="760" width="8" height="11"/><rect x="1706" y="760" width="8" height="11"/>
+    <rect x="652" y="778" width="8" height="11"/><rect x="668" y="778" width="8" height="11"/>
+    <rect x="652" y="804" width="8" height="11"/><rect x="684" y="804" width="8" height="11"/>
+    <rect x="162" y="790" width="8" height="11"/><rect x="178" y="790" width="8" height="11"/>
+    <rect x="162" y="816" width="8" height="11"/><rect x="194" y="816" width="8" height="11"/>
+  </g>
+
+  <!-- park ground -->
+  <path fill="url(#ground)" d="M0,940 C400,912 800,950 1200,928 C1500,914 1750,940 1920,924 L1920,1280 L0,1280 Z"/>
+  <!-- sunlit grass rim -->
+  <path fill="none" stroke="#2f6a64" stroke-width="7" opacity="0.55" d="M0,940 C400,912 800,950 1200,928 C1500,914 1750,940 1920,924"/>
+  <!-- sun reflection spilling onto the ground -->
+  <ellipse cx="1240" cy="965" rx="330" ry="46" fill="url(#reflect)"/>
+  <!-- warm path catching the light -->
+  <path fill="#e8a878" opacity="0.22" d="M540,1280 C720,1110 990,1020 1230,952 L1296,952 C1090,1032 880,1130 770,1280 Z"/>
+
+  <!-- tree silhouette, left -->
+  <g fill="#0a2325">
+    <path d="M112,1062 L106,942 L124,942 L122,1062 Z"/>
+    <ellipse cx="105" cy="900" rx="88" ry="70"/>
+    <ellipse cx="165" cy="938" rx="68" ry="52"/>
+    <ellipse cx="55" cy="948" rx="58" ry="46"/>
+  </g>
+
+  <!-- street lamp, right -->
+  <g>
+    <circle cx="1630" cy="860" r="36" fill="url(#lampGlow)"/>
+    <path d="M1660,1135 V882 Q1660,858 1636,858" stroke="#0a2022" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <circle cx="1632" cy="859" r="9" fill="#ffe2b0"/>
+  </g>
+
+  <!-- cyclist riding home, mid-ground -->
+  <g stroke="#0a2022" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <circle cx="1390" cy="1015" r="30" stroke-width="8"/>
+    <circle cx="1488" cy="1015" r="30" stroke-width="8"/>
+    <path d="M1390,1015 L1430,974 L1473,977 L1488,1015 M1430,974 L1441,1013 L1390,1015 M1441,1013 L1473,977" stroke-width="8"/>
+    <path d="M1441,1010 L1437,982 L1448,950 L1473,970" stroke-width="9"/>
+    <path d="M1448,950 Q1464,944 1473,954" stroke-width="9"/>
+    <circle cx="1447" cy="936" r="9" stroke-width="8"/>
+  </g>
+  <!-- sunset rim light on the cyclist -->
+  <path d="M1488,985 A30,30 0 0 1 1516,1010" stroke="#ffc987" stroke-width="3.5" fill="none" opacity="0.8" stroke-linecap="round"/>
+
+  <!-- foreground sidewalk band -->
+  <path fill="#051416" d="M0,1150 C500,1118 1100,1160 1920,1130 L1920,1280 L0,1280 Z"/>
+
+  <!-- ring-and-post racks (the BPAT mark, in the wild) -->
+  <g stroke="#06171a" stroke-linecap="round" fill="none">
+    <circle cx="340" cy="1080" r="46" stroke-width="16"/>
+    <line x1="340" y1="1126" x2="340" y2="1212" stroke-width="16"/>
+    <circle cx="560" cy="1092" r="42" stroke-width="15"/>
+    <line x1="560" y1="1134" x2="560" y2="1214" stroke-width="15"/>
+    <circle cx="748" cy="1100" r="36" stroke-width="13"/>
+    <line x1="748" y1="1136" x2="748" y2="1212" stroke-width="13"/>
+  </g>
+  <!-- rim light on the racks -->
+  <g stroke="#ffc987" stroke-width="5" fill="none" opacity="0.75" stroke-linecap="round">
+    <path d="M340,1034 A46,46 0 0 1 386,1080"/>
+    <path d="M560,1050 A42,42 0 0 1 602,1092"/>
+    <path d="M748,1064 A36,36 0 0 1 784,1100"/>
+  </g>
+
+  <!-- bike parked at the racks -->
+  <g stroke="#06171a" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <circle cx="880" cy="1148" r="40" stroke-width="10"/>
+    <circle cx="1030" cy="1148" r="40" stroke-width="10"/>
+    <path d="M880,1148 L955,1062 L1015,1068 L1030,1148 M955,1062 L975,1144 L880,1148 M975,1144 L1015,1068" stroke-width="10"/>
+    <path d="M946,1054 L970,1050" stroke-width="10"/>
+    <path d="M1008,1060 Q1030,1046 1044,1058" stroke-width="10"/>
+  </g>
+  <!-- rim light on the bike wheels -->
+  <g stroke="#ffc987" stroke-width="4" fill="none" opacity="0.7" stroke-linecap="round">
+    <path d="M880,1108 A40,40 0 0 1 918,1136"/>
+    <path d="M1030,1108 A40,40 0 0 1 1068,1136"/>
+  </g>
+
+  <!-- top vignette for headline legibility -->
+  <rect width="1920" height="360" fill="url(#vignette)"/>
+</svg>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="620" viewBox="0 0 800 620" fill="none">
+  <defs>
+    <linearGradient id="stroke1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#276266"/>
+      <stop offset="1" stop-color="#5fa3a7"/>
+    </linearGradient>
+    <linearGradient id="stroke2" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#17373a"/>
+      <stop offset="1" stop-color="#3f8589"/>
+    </linearGradient>
+    <radialGradient id="haze" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#92c3c5" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#92c3c5" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soften" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05" intercept="0"/>
+      </feComponentTransfer>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+
+  <!-- soft backdrop -->
+  <g filter="url(#soften)">
+    <ellipse cx="420" cy="330" rx="300" ry="220" fill="url(#haze)"/>
+    <ellipse cx="250" cy="480" rx="220" ry="120" fill="#276266" opacity="0.18"/>
+  </g>
+
+  <!-- dotted travel path swooping in -->
+  <path d="M-40,520 C160,470 240,560 420,500 C560,455 660,480 820,420"
+        stroke="#276266" stroke-opacity="0.3" stroke-width="4" stroke-dasharray="2 18" stroke-linecap="round"/>
+
+  <!-- ring-and-post stand -->
+  <g stroke="url(#stroke2)" stroke-linecap="round">
+    <circle cx="468" cy="272" r="58" stroke-width="17"/>
+    <line x1="468" y1="330" x2="468" y2="492" stroke-width="17"/>
+    <line x1="438" y1="492" x2="498" y2="492" stroke-width="14"/>
+  </g>
+
+  <!-- bicycle -->
+  <g stroke="url(#stroke1)" stroke-linecap="round" stroke-linejoin="round">
+    <!-- wheels -->
+    <circle cx="232" cy="402" r="92" stroke-width="11"/>
+    <circle cx="232" cy="402" r="64" stroke-width="2.5" opacity="0.45"/>
+    <circle cx="572" cy="402" r="92" stroke-width="11"/>
+    <circle cx="572" cy="402" r="64" stroke-width="2.5" opacity="0.45"/>
+    <!-- frame -->
+    <path d="M232,402 L355,268 L520,272" stroke-width="13" fill="none"/>
+    <path d="M232,402 L398,406 L355,268" stroke-width="13" fill="none"/>
+    <path d="M398,406 L520,272" stroke-width="13" fill="none"/>
+    <path d="M520,272 L572,402" stroke-width="13" fill="none"/>
+    <!-- saddle + post -->
+    <path d="M355,268 L348,240" stroke-width="11"/>
+    <path d="M320,238 L378,238" stroke-width="13"/>
+    <!-- handlebars -->
+    <path d="M520,272 L530,236 Q560,228 566,244" stroke-width="11" fill="none"/>
+    <!-- crank -->
+    <circle cx="398" cy="406" r="17" stroke-width="9"/>
+  </g>
+
+  <!-- lock connecting frame to ring -->
+  <path d="M433,300 q-14,22 8,34" stroke="#17373a" stroke-width="10" stroke-linecap="round" fill="none"/>
+
+  <!-- hubs -->
+  <circle cx="232" cy="402" r="9" fill="#276266"/>
+  <circle cx="572" cy="402" r="9" fill="#276266"/>
+
+  <!-- ground shadow -->
+  <ellipse cx="400" cy="512" rx="290" ry="22" fill="#17373a" opacity="0.14" filter="url(#soften)"/>
+
+  <rect width="800" height="620" filter="url(#grain)" opacity="0.8"/>
+</svg>
