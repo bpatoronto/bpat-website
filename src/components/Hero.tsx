@@ -1,6 +1,6 @@
 import heroScene from '../assets/bg-hero.svg'
 import heroAbstract from '../assets/bg-hero-abstract.svg'
-import { useDesignStyle } from '../design'
+import { useDesignStyle } from '../design-context'
 
 const stats = [
   { big: '2', small: 'core gaps we’re closing: plazas & apartments' },
@@ -46,20 +46,16 @@ export default function Hero() {
             scene ? 'text-white/95 [text-shadow:0_1px_12px_rgba(20,15,40,0.4)]' : 'text-pine-900/85'
           }`}
         >
-          Bike lanes get you across the city — but every ride begins and ends with a place to
-          park. Toronto doesn&rsquo;t have nearly enough of them. We&rsquo;re here to change that,
-          one rack at a time.
+          Every ride begins and ends with a place to park — and Toronto doesn&rsquo;t have
+          nearly enough of them. We&rsquo;re changing that, one rack at a time.
         </p>
 
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+        <div className="mt-10">
           <a href="#join" className="btn-solid">
             Get involved
             <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M4 10h12m-5-5 5 5-5 5" />
             </svg>
-          </a>
-          <a href="#problem" className={scene ? 'btn-glass-dark' : 'btn-glass'}>
-            See the problem
           </a>
         </div>
 

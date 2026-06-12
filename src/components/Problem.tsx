@@ -16,13 +16,13 @@ const issues = [
   {
     number: '01',
     title: 'The Suburban Plaza Problem',
-    body: 'Suburban plazas and strip malls have swaths of car parking but often not a single bike rack or ring — even when there is plenty of space. Ride to your local store or restaurant and you’ll find there’s nowhere to park: you risk leaving your bike loose, where it can easily be stolen.',
+    body: 'Plazas and strip malls have acres of car parking but often not a single rack. Ride to your local store and there’s nowhere safe to lock up.',
     points: ['Acres of asphalt, zero racks', 'Short local trips made impossible', 'Theft risk at every errand'],
   },
   {
     number: '02',
     title: 'The Apartment Building Problem',
-    body: 'Apartment communities built in the 50s and 60s often lack the dedicated, secure bike parking that newer buildings are required to have. Residents haul bikes up crowded elevators into their units — or give up on owning a bike altogether.',
+    body: 'Postwar apartment buildings rarely have the secure bike storage newer buildings must provide. Residents haul bikes up elevators — or give up on owning one.',
     points: ['No secure rooms in postwar towers', 'Bikes squeezed into small units', 'E-bike ownership off the table'],
   },
 ]
@@ -45,12 +45,11 @@ export default function Problem() {
         <Reveal>
           <p className="eyebrow text-center text-pine-600">The problem</p>
           <p className="mx-auto mt-8 max-w-3xl text-center text-xl font-medium leading-relaxed text-pine-900 md:text-2xl">
-            Bike lanes are the vital &ldquo;in-between&rdquo; — but bike parking is the crucial
-            start and end of every ride, <span className="font-semibold text-pine-600">and it is sorely lacking in Toronto.</span>
+            Bike parking is the start and end of every ride —{' '}
+            <span className="font-semibold text-pine-600">and Toronto is sorely lacking.</span>
           </p>
           <p className="mx-auto mt-6 max-w-2xl text-center text-base leading-relaxed text-pine-900/85">
-            It&rsquo;s the overlooked issue that stops people from biking to their local
-            destinations — or from owning a bike at all. We&rsquo;re focused on two critical gaps.
+            It stops people from riding — or from owning a bike at all. Two gaps stand out.
           </p>
         </Reveal>
 

@@ -6,7 +6,7 @@ const paths = [
     audience: 'For residents & riders',
     title: 'Tell us where parking is missing',
     blurb:
-      'Know a plaza, park or corner where you wish you could lock up? Drop a pin on our map — every pin builds the case we bring to property owners and the city.',
+      'Know a spot where you wish you could lock up? Drop a pin — every pin builds the case we bring to owners and the city.',
     cta: { label: 'Pin a spot on the map', to: '/map' },
     icon: (
       <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -19,7 +19,7 @@ const paths = [
     audience: 'For apartment & plaza owners',
     title: 'Add parking on your property',
     blurb:
-      'It’s cheaper and easier than you think — a ring-and-post costs about $500 installed, and we’ll walk you through every step, from siting to vendors.',
+      'A ring-and-post costs about $500 installed. We’ll walk you through every step, from siting to vendors.',
     cta: { label: 'Learn how', href: '#owners' },
     icon: (
       <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -34,7 +34,7 @@ const paths = [
     audience: 'For councillors & city staff',
     title: 'Explore a bike parking incentive or grant',
     blurb:
-      'A small pricing incentive or grant would let plaza and apartment owners install racks at little or no cost. We hand you documented gaps in your ward, shovel-ready locations and visible community demand to make the case.',
+      'A small incentive or grant would let owners install racks at little or no cost. We bring the documented gaps and community demand to make the case.',
     cta: { label: 'Explore the incentive', href: 'mailto:hello@bpat.ca?subject=Bike%20parking%20incentive%20or%20grant%20for%20my%20ward' },
     icon: (
       <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -65,8 +65,8 @@ export default function GetInvolved() {
             Whoever you are, there&rsquo;s a way in.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-center text-base leading-relaxed text-pine-900/85">
-            Better bike parking takes residents, property owners and city hall. Pick your path —
-            each one gets a rack in the ground.
+            Residents, property owners, city hall — pick your path. Each one gets a rack in the
+            ground.
           </p>
         </Reveal>
 

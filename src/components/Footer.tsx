@@ -37,6 +37,7 @@ export default function Footer() {
             <Link to="/#approach" className="text-xs font-medium uppercase tracking-[0.2em] text-white/85 transition-colors hover:text-white">Our Approach</Link>
             <Link to="/map" className="text-xs font-medium uppercase tracking-[0.2em] text-white/85 transition-colors hover:text-white">Gap Map</Link>
             <Link to="/#join" className="text-xs font-medium uppercase tracking-[0.2em] text-white/85 transition-colors hover:text-white">Get Involved</Link>
+            <Link to="/team" className="text-xs font-medium uppercase tracking-[0.2em] text-white/85 transition-colors hover:text-white">Meet the Team</Link>
           </nav>
 
           <div className="flex gap-3">

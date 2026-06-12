@@ -1,23 +1,23 @@
 import Reveal from './Reveal'
 import deepScene from '../assets/bg-deep.svg'
 import deepAbstract from '../assets/bg-deep-abstract.svg'
-import { useDesignStyle } from '../design'
+import { useDesignStyle } from '../design-context'
 
 const steps = [
   {
     step: 'Step 1',
     title: 'Map the gaps',
-    body: 'Our researchers use mapping tools and street imagery to document where bike parking is missing across Toronto — building a database of locations, available space, and property ownership.',
+    body: 'We document where bike parking is missing across Toronto — locations, available space, and who owns the property.',
   },
   {
     step: 'Step 2',
     title: 'Make the case',
-    body: 'We reach out to plaza owners, businesses and property managers directly — highlighting the benefit, the low cost, and the space already sitting there. We even recommend vendors.',
+    body: 'We go to owners directly with the benefit, the low cost, and the space already sitting there — vendors included.',
   },
   {
     step: 'Step 3',
     title: 'Get racks in the ground',
-    body: 'Owner says yes, rack goes in, neighbourhood gains a place to park. Every installation is a win we track, share and build momentum from.',
+    body: 'Owner says yes, rack goes in, the neighbourhood gains a place to park. Every install builds momentum.',
   },
 ]
 
@@ -44,10 +44,8 @@ export default function Approach() {
             <span className="text-pine-200">We go straight to the source.</span>
           </h2>
           <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/90">
-            Bike parking is remarkably affordable — a ring-and-post can cost as little as a few
-            hundred dollars installed. So instead of waiting years for bylaws to change, we work
-            with property owners today: showing them the benefit, the low cost, and the space
-            they already have.
+            A ring-and-post costs a few hundred dollars installed. So instead of waiting years
+            for bylaws to change, we work with property owners today.
           </p>
         </Reveal>
 
@@ -72,9 +70,8 @@ export default function Approach() {
                 Then we change the rules.
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-white/85 md:text-base">
-                The eventual goal: push the city to create incentives that encourage installation —
-                and, one day, requirements for bike parking on private property. Every rack we get
-                installed now is the proof that makes that case undeniable.
+                The eventual goal: city incentives for installation — and one day, requirements.
+                Every rack installed now makes that case undeniable.
               </p>
             </div>
             <a href="#join" className="btn-glass-dark shrink-0">

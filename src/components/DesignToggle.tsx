@@ -1,4 +1,4 @@
-import { useDesignStyle, type DesignStyle } from '../design'
+import { useDesignStyle, type DesignStyle } from '../design-context'
 
 const options: { id: DesignStyle; label: string }[] = [
   { id: 'scene', label: 'Scene' },

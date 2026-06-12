@@ -33,8 +33,8 @@ export default function Owners() {
             Have space? Here&rsquo;s how easy it is.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-center text-base leading-relaxed text-pine-900/85">
-            You don&rsquo;t need a permit battle or a budget line — just a few hundred dollars and
-            a patch of concrete. We make the rest simple.
+            No permit battle, no big budget — a few hundred dollars and a patch of concrete. We
+            handle the rest.
           </p>
         </Reveal>
 

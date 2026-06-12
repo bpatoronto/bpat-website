@@ -1,15 +1,7 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
-
-/** Two visual directions for the site: the painterly golden-hour scene,
- *  and the original abstract gradient art. Toggleable, persisted. */
-export type DesignStyle = 'scene' | 'abstract'
+import { useEffect, useState, type ReactNode } from 'react'
+import { DesignStyleContext, type DesignStyle } from './design-context'
 
 const STORAGE_KEY = 'bpat-design-style'
-
-const DesignStyleContext = createContext<{
-  style: DesignStyle
-  setStyle: (style: DesignStyle) => void
-}>({ style: 'scene', setStyle: () => {} })
 
 export function DesignStyleProvider({ children }: { children: ReactNode }) {
   const [style, setStyle] = useState<DesignStyle>(() => {
@@ -31,5 +23,3 @@ export function DesignStyleProvider({ children }: { children: ReactNode }) {
 
   return <DesignStyleContext.Provider value={{ style, setStyle }}>{children}</DesignStyleContext.Provider>
 }
-
-export const useDesignStyle = () => useContext(DesignStyleContext)

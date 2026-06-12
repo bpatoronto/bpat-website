@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { MapContainer, TileLayer, CircleMarker } from 'react-leaflet'
+import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import Reveal from './Reveal'
 import { spots, styleFor } from '../data/spots'
@@ -38,9 +38,8 @@ export default function MapTeaser() {
                   See where Toronto has nowhere to park.
                 </h2>
                 <p className="mt-5 text-base leading-relaxed text-pine-900/85">
-                  We&rsquo;re mapping every plaza without a rack and every building without secure
-                  storage — and every win as racks go in. Spot a gap we missed? Drop a pin right
-                  on the map.
+                  Every plaza without a rack, every building without storage — and every win.
+                  Spot a gap we missed? Drop a pin.
                 </p>
                 <Link to="/map" className="btn-solid mt-8 px-9! py-4!">
                   Explore the map
@@ -57,13 +56,7 @@ export default function MapTeaser() {
                     center={[43.715, -79.36]}
                     zoom={10}
                     className="h-full w-full"
-                    zoomControl={false}
-                    dragging={false}
                     scrollWheelZoom={false}
-                    doubleClickZoom={false}
-                    touchZoom={false}
-                    boxZoom={false}
-                    keyboard={false}
                   >
                     <TileLayer
                       attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
@@ -76,21 +69,28 @@ export default function MapTeaser() {
                         radius={6}
                         weight={2}
                         pathOptions={styleFor(spot.category)}
-                      />
+                      >
+                        <Popup>
+                          <div className="font-sans">
+                            <p className="m-0 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-pine-500">
+                              {spot.category === 'win' ? 'Win' : spot.category === 'plaza' ? 'Plaza gap' : 'Apartment gap'}
+                            </p>
+                            <p className="m-0 mt-1 text-sm font-semibold text-pine-950">{spot.name}</p>
+                          </div>
+                        </Popup>
+                      </CircleMarker>
                     ))}
                   </MapContainer>
                 ) : (
                   <div className="h-full w-full bg-pine-100" />
                 )}
-                {/* Whole preview is one big link into the real map */}
+                {/* Corner link into the full map — doesn't block panning */}
                 <Link
                   to="/map"
                   aria-label="Explore the full gap map"
-                  className="group absolute inset-0 z-800 flex items-end justify-end bg-linear-to-t from-pine-950/25 via-transparent to-transparent p-4"
+                  className="absolute bottom-3 right-3 z-800 rounded-full bg-white/95 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-pine-700 shadow-lg transition-transform duration-300 hover:-translate-y-0.5"
                 >
-                  <span className="rounded-full bg-white/95 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-pine-700 shadow-lg transition-transform duration-300 group-hover:-translate-y-0.5">
-                    Open the map →
-                  </span>
+                  Open the map →
                 </Link>
               </div>
             </div>

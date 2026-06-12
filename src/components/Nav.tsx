@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Logo from './Logo'
-import { useDesignStyle } from '../design'
+import { useDesignStyle } from '../design-context'
 
 const links = [
   { to: '/#problem', label: 'The Problem' },
@@ -11,6 +11,8 @@ const links = [
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
+  // CTA waits until the reader is well past the hero, then animates in
+  const [showCta, setShowCta] = useState(false)
   const [open, setOpen] = useState(false)
   const { pathname } = useLocation()
   const { style } = useDesignStyle()
@@ -21,7 +23,10 @@ export default function Nav() {
   const onDark = !solid && style === 'scene'
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24)
+      setShowCta(window.scrollY > window.innerHeight * 1.5)
+    }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -36,14 +41,14 @@ export default function Nav() {
             : `border-transparent bg-transparent ${onDark ? 'text-white' : 'text-pine-900'}`
         }`}
       >
-        <Logo className={onDark ? 'text-white' : 'text-pine-900'} />
+        <Logo className={`transition-colors duration-500 ${onDark ? 'text-white' : 'text-pine-900'}`} />
 
         <ul className="hidden items-center gap-8 md:flex">
           {links.map(({ to, label }) => (
             <li key={to}>
               <Link
                 to={to}
-                className={`text-[0.8rem] font-medium uppercase tracking-[0.18em] transition-colors ${
+                className={`text-[0.8rem] font-medium uppercase tracking-[0.18em] transition-colors duration-500 ${
                   onDark ? 'text-white/95 hover:text-white' : 'text-pine-900 hover:text-pine-600'
                 }`}
               >
@@ -54,13 +59,15 @@ export default function Nav() {
         </ul>
 
         <div className="flex items-center gap-2">
-          {/* Primary CTA — sticky top right; pops once you scroll */}
+          {/* Primary CTA — appears top right well past the hero, animating in */}
           <Link
             to="/#join"
-            className={`btn-solid !px-6 !py-2.5 transition-all duration-500 ${
-              scrolled
-                ? 'inline-flex scale-105 !shadow-[0_14px_38px_-10px_rgba(39,98,102,0.95)]'
-                : 'hidden md:inline-flex'
+            tabIndex={showCta ? 0 : -1}
+            aria-hidden={!showCta}
+            className={`btn-solid px-6! py-2.5! transition-all duration-500 ${
+              showCta
+                ? 'inline-flex translate-y-0 opacity-100 shadow-[0_14px_38px_-10px_rgba(39,98,102,0.95)]!'
+                : 'pointer-events-none -translate-y-3 opacity-0 max-md:hidden md:inline-flex'
             }`}
           >
             Get involved
@@ -68,7 +75,7 @@ export default function Nav() {
 
           {/* Mobile toggle */}
           <button
-            className={`flex h-10 w-10 items-center justify-center rounded-full md:hidden ${
+            className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-500 md:hidden ${
               onDark ? 'text-white' : 'text-pine-900'
             }`}
             onClick={() => setOpen((o) => !o)}
