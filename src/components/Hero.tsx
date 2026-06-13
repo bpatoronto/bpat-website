@@ -3,9 +3,9 @@ import heroAbstract from '../assets/bg-hero-abstract.svg'
 import { useDesignStyle } from '../design-context'
 
 const stats = [
-  { big: '2', small: 'core gaps we’re closing: plazas & apartments' },
-  { big: '~$500', small: 'is all a ring-and-post can cost to install' },
-  { big: '0', small: 'racks at far too many places worth biking to' },
+  { big: '2', small: 'core gaps: plazas & apartments' },
+  { big: '~$XXX', small: 'to install a ring-and-post' },
+  { big: '0', small: 'racks at too many places worth biking to' },
 ]
 
 export default function Hero() {
@@ -22,13 +22,13 @@ export default function Hero() {
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
 
-      <div className="container-pg flex flex-1 flex-col items-center justify-center pb-28 pt-40 text-center">
+      <div className="container-pg flex flex-1 flex-col items-center justify-center pb-24 pt-32 text-center md:pb-28 md:pt-40">
         <p
-          className={`eyebrow mb-7 rounded-full border px-5 py-2.5 ${
+          className={`eyebrow mb-6 rounded-full border px-4 py-2 md:mb-7 md:px-5 md:py-2.5 ${
             scene ? 'border-white/30 bg-pine-950/30 text-white' : 'border-pine-600/20 bg-white/70 text-pine-700'
           }`}
         >
-          A new advocacy alliance for Toronto
+          A new alliance for Toronto
         </p>
 
         <h1
@@ -42,12 +42,12 @@ export default function Hero() {
         </h1>
 
         <p
-          className={`mt-8 max-w-2xl text-balance text-base leading-relaxed md:text-lg ${
+          className={`mt-7 max-w-xl text-balance text-base leading-relaxed md:mt-8 md:text-lg ${
             scene ? 'text-white/95 [text-shadow:0_1px_12px_rgba(20,15,40,0.4)]' : 'text-pine-900/85'
           }`}
         >
-          Every ride begins and ends with a place to park — and Toronto doesn&rsquo;t have
-          nearly enough of them. We&rsquo;re changing that, one rack at a time.
+          Toronto doesn&rsquo;t have nearly enough places to park a bike. We&rsquo;re fixing
+          that, one rack at a time.
         </p>
 
         <div className="mt-10">
@@ -61,13 +61,13 @@ export default function Hero() {
 
         {/* Floating stat strip */}
         <div
-          className={`animate-float mt-16 grid w-full max-w-3xl grid-cols-1 divide-y sm:grid-cols-3 sm:divide-x sm:divide-y-0 ${
+          className={`animate-float mt-12 grid w-full max-w-3xl grid-cols-1 divide-y sm:grid-cols-3 sm:divide-x sm:divide-y-0 md:mt-16 ${
             scene ? 'glass-dark divide-white/15' : 'glass divide-pine-600/10'
           }`}
         >
           {stats.map(({ big, small }) => (
-            <div key={big} className="flex flex-col items-center gap-1.5 px-6 py-6">
-              <span className={`text-3xl font-bold tracking-tight ${scene ? 'text-[#ffd49a]' : 'text-pine-600'}`}>
+            <div key={big} className="flex flex-col items-center gap-1.5 px-6 py-4 md:py-6">
+              <span className={`text-2xl font-bold tracking-tight md:text-3xl ${scene ? 'text-[#ffd49a]' : 'text-pine-600'}`}>
                 {big}
               </span>
               <span className={`max-w-[16rem] text-xs font-medium leading-relaxed ${scene ? 'text-white/90' : 'text-pine-900/80'}`}>
@@ -86,7 +86,7 @@ export default function Hero() {
       >
         <span className="text-[0.7rem] font-semibold uppercase tracking-[0.35em]">Learn more</span>
         <svg viewBox="0 0 20 20" className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-1" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M10 4v12m-5-5 5 5-5 5" />
+          <path d="M10 4v12m-5-5 5 5 5-5" />
         </svg>
       </a>
     </section>

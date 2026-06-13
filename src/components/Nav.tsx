@@ -59,15 +59,16 @@ export default function Nav() {
         </ul>
 
         <div className="flex items-center gap-2">
-          {/* Primary CTA — appears top right well past the hero, animating in */}
+          {/* Primary CTA — appears top right well past the hero, animating in.
+              Hidden on mobile: the pill is too tight, and the menu has its own CTA. */}
           <Link
             to="/#join"
             tabIndex={showCta ? 0 : -1}
             aria-hidden={!showCta}
-            className={`btn-solid px-6! py-2.5! transition-all duration-500 ${
+            className={`btn-solid hidden px-6! py-2.5! transition-all duration-500 md:inline-flex ${
               showCta
-                ? 'inline-flex translate-y-0 opacity-100 shadow-[0_14px_38px_-10px_rgba(39,98,102,0.95)]!'
-                : 'pointer-events-none -translate-y-3 opacity-0 max-md:hidden md:inline-flex'
+                ? 'translate-y-0 opacity-100 shadow-[0_14px_38px_-10px_rgba(39,98,102,0.95)]!'
+                : 'pointer-events-none -translate-y-3 opacity-0'
             }`}
           >
             Get involved

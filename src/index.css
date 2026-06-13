@@ -48,9 +48,9 @@ body {
     @apply rounded-3xl border border-white/80 bg-white/80 shadow-[0_8px_40px_-12px_rgba(23,55,58,0.18)];
   }
 
-  /* Frosted card on deep/dusk backgrounds */
+  /* Card on deep/dusk backgrounds — near-opaque so the scene doesn't bleed through */
   .glass-dark {
-    @apply rounded-3xl border border-white/20 bg-pine-950/45 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.35)];
+    @apply rounded-3xl border border-white/15 bg-pine-950/85 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.45)];
   }
 
   /* Classic planning-document label */
@@ -60,7 +60,7 @@ body {
 
   /* Big civic statement type, à la classic advocacy sites */
   .statement {
-    @apply text-xl font-semibold uppercase leading-relaxed tracking-[0.12em] md:text-2xl;
+    @apply text-lg font-semibold uppercase leading-relaxed tracking-[0.08em] md:text-2xl md:tracking-[0.12em];
   }
 
   .btn-solid,

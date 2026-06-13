@@ -1,3 +1,7 @@
+import plazaPhoto from '../assets/spot-plaza.svg'
+import apartmentPhoto from '../assets/spot-apartment.svg'
+import winPhoto from '../assets/spot-win.svg'
+
 export type Category = 'plaza' | 'apartment' | 'win'
 
 export type Spot = {
@@ -22,6 +26,14 @@ export const spots: Spot[] = [
   { name: 'Danforth–Woodbine racks', note: 'Example of what success looks like: visible, plentiful main-street parking.', category: 'win', position: [43.685, -79.312] },
   { name: 'Roncesvalles ring-and-posts', note: 'Ring-and-posts at regular intervals serving every storefront.', category: 'win', position: [43.646, -79.448] },
 ]
+
+// Placeholder art per category until the mapping team has real site photos.
+// When a spot gains a `photo` field, prefer it over these.
+export const photoFor = (category: Category) =>
+  category === 'win' ? winPhoto : category === 'plaza' ? plazaPhoto : apartmentPhoto
+
+export const labelFor = (category: Category) =>
+  category === 'win' ? 'Win' : category === 'plaza' ? 'Plaza gap' : 'Apartment gap'
 
 export const styleFor = (category: Category) =>
   category === 'win'

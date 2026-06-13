@@ -5,9 +5,9 @@ const guides = [
     audience: 'Plaza & storefront owners',
     title: 'A rack outside your door, this season',
     points: [
-      'A ring-and-post costs about $500, installed — less than repainting a parking stall',
-      'Fits in half a parking spot, a sidewalk edge or unused concrete you already own',
-      'We scope the location with you and recommend trusted vendors',
+      'About $XXX installed (placeholder figure)',
+      'Fits in half a parking spot or unused concrete',
+      'We scope the site and recommend vendors',
     ],
     cta: { label: 'Get the plaza guide', href: 'mailto:hello@bpat.ca?subject=Bike%20parking%20for%20my%20plaza' },
   },
@@ -15,11 +15,11 @@ const guides = [
     audience: 'Apartment owners & managers',
     title: 'Secure storage your tenants will use',
     points: [
-      'Convert a garage corner, storage room or dead space by the elevators',
-      'Secure bike parking retains tenants and makes e-bike ownership possible',
-      'Retrofit options designed for postwar towers — no new construction needed',
+      'Convert a garage corner or dead space by the elevators',
+      'Retains tenants, makes e-bike ownership possible',
+      'Retrofits for postwar towers — no new construction',
     ],
-    cta: { label: 'Learn how — apartment owners', href: 'mailto:hello@bpat.ca?subject=Bike%20parking%20for%20my%20building' },
+    cta: { label: 'Get the building guide', href: 'mailto:hello@bpat.ca?subject=Bike%20parking%20for%20my%20building' },
   },
 ]
 
@@ -29,21 +29,20 @@ export default function Owners() {
       <div className="container-pg">
         <Reveal>
           <p className="eyebrow text-center text-pine-600">For property owners</p>
-          <h2 className="mt-6 text-center text-3xl font-bold uppercase tracking-[0.08em] text-pine-950 md:text-4xl">
+          <h2 className="mt-6 text-center text-2xl font-bold uppercase tracking-[0.08em] text-pine-950 sm:text-3xl md:text-4xl">
             Have space? Here&rsquo;s how easy it is.
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-center text-base leading-relaxed text-pine-900/85">
-            No permit battle, no big budget — a few hundred dollars and a patch of concrete. We
-            handle the rest.
+          <p className="mx-auto mt-5 max-w-2xl text-center text-base leading-relaxed text-pine-900/85 md:mt-6">
+            A few hundred dollars and a patch of concrete. We handle the rest.
           </p>
         </Reveal>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {guides.map(({ audience, title, points, cta }, i) => (
             <Reveal key={audience} delay={i * 150} className="h-full">
-              <article className="glass grain relative flex h-full flex-col overflow-hidden p-9 md:p-10">
+              <article className="glass grain relative flex h-full flex-col overflow-hidden p-7 md:p-10">
                 <p className="eyebrow text-pine-600">{audience}</p>
-                <h3 className="mt-4 text-xl font-semibold uppercase tracking-[0.06em] text-pine-950 md:text-2xl">
+                <h3 className="mt-4 text-lg font-semibold uppercase tracking-[0.06em] text-pine-950 md:text-2xl">
                   {title}
                 </h3>
                 <ul className="mt-6 flex flex-1 flex-col gap-3">

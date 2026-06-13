@@ -3,10 +3,9 @@ import Reveal from './Reveal'
 
 const paths = [
   {
-    audience: 'For residents & riders',
+    audience: 'Residents & riders',
     title: 'Tell us where parking is missing',
-    blurb:
-      'Know a spot where you wish you could lock up? Drop a pin — every pin builds the case we bring to owners and the city.',
+    blurb: 'Every pin builds the case we bring to owners and the city.',
     cta: { label: 'Pin a spot on the map', to: '/map' },
     icon: (
       <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -16,10 +15,9 @@ const paths = [
     ),
   },
   {
-    audience: 'For apartment & plaza owners',
+    audience: 'Apartment & plaza owners',
     title: 'Add parking on your property',
-    blurb:
-      'A ring-and-post costs about $500 installed. We’ll walk you through every step, from siting to vendors.',
+    blurb: 'About $XXX installed. We walk you through every step.',
     cta: { label: 'Learn how', href: '#owners' },
     icon: (
       <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -31,10 +29,9 @@ const paths = [
     ),
   },
   {
-    audience: 'For councillors & city staff',
+    audience: 'Councillors & city staff',
     title: 'Explore a bike parking incentive or grant',
-    blurb:
-      'A small incentive or grant would let owners install racks at little or no cost. We bring the documented gaps and community demand to make the case.',
+    blurb: 'A small incentive would let owners install racks at little or no cost.',
     cta: { label: 'Explore the incentive', href: 'mailto:hello@bpat.ca?subject=Bike%20parking%20incentive%20or%20grant%20for%20my%20ward' },
     icon: (
       <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -61,22 +58,20 @@ export default function GetInvolved() {
       <div className="container-pg relative">
         <Reveal>
           <p className="eyebrow text-center text-pine-600">Get involved</p>
-          <h2 className="mt-6 text-center text-3xl font-bold uppercase tracking-[0.08em] text-pine-950 md:text-5xl">
+          <p className="mt-5 text-center text-lg font-medium text-pine-900/85 md:text-xl">
             Whoever you are, there&rsquo;s a way in.
-          </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-center text-base leading-relaxed text-pine-900/85">
-            Residents, property owners, city hall — pick your path. Each one gets a rack in the
-            ground.
           </p>
         </Reveal>
 
-        <div className="mt-16 grid gap-5 md:grid-cols-3">
+        <div className="mt-12 grid gap-5 md:mt-14 md:grid-cols-3">
           {paths.map(({ audience, title, blurb, cta, icon }, i) => (
             <Reveal key={audience} delay={i * 120} className="h-full">
               <article className="glass group flex h-full flex-col p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_50px_-16px_rgba(23,55,58,0.3)] md:p-8">
                 <span className="text-pine-600 transition-transform duration-300 group-hover:-rotate-6">{icon}</span>
-                <p className="eyebrow mt-5 text-pine-600">{audience}</p>
-                <h3 className="mt-3 text-lg font-semibold leading-snug text-pine-950">{title}</h3>
+                <h3 className="mt-5 text-xl font-bold uppercase tracking-wider text-pine-950 md:text-2xl">
+                  {audience}
+                </h3>
+                <p className="mt-3 text-base font-semibold leading-snug text-pine-700">{title}</p>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-pine-900/85">{blurb}</p>
                 {'to' in cta && cta.to ? (
                   <Link to={cta.to} className="btn-solid mt-6 w-full px-5!">
@@ -97,7 +92,7 @@ export default function GetInvolved() {
 
         <Reveal delay={150}>
           <p className="mt-14 text-center text-sm text-pine-900/80">
-            Want to volunteer on the alliance itself? We&rsquo;d love that too —{' '}
+            Want to volunteer with us?{' '}
             <a href="mailto:hello@bpat.ca?subject=I%20want%20to%20help%20BPAT" className="font-semibold text-pine-700 underline decoration-pine-600/40 underline-offset-2 hover:text-pine-600">
               hello@bpat.ca
             </a>

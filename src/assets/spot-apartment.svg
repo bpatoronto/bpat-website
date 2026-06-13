@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="200" viewBox="0 0 360 200" preserveAspectRatio="xMidYMid slice">
+  <!-- Placeholder: postwar apartment towers, no secure bike storage. -->
+  <defs>
+    <linearGradient id="asky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#46415f"/>
+      <stop offset="0.65" stop-color="#b06a64"/>
+      <stop offset="1" stop-color="#f0a368"/>
+    </linearGradient>
+    <linearGradient id="agnd" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1d4341"/>
+      <stop offset="1" stop-color="#0e2426"/>
+    </linearGradient>
+  </defs>
+  <rect width="360" height="156" fill="url(#asky)"/>
+  <!-- towers -->
+  <rect x="48" y="26" width="84" height="134" fill="#3a2b44"/>
+  <rect x="208" y="48" width="72" height="112" fill="#332540"/>
+  <g fill="#ffd9a3" opacity="0.75">
+    <rect x="58" y="38" width="12" height="9"/><rect x="84" y="38" width="12" height="9"/><rect x="110" y="38" width="12" height="9"/>
+    <rect x="58" y="60" width="12" height="9"/><rect x="110" y="60" width="12" height="9"/>
+    <rect x="84" y="82" width="12" height="9"/><rect x="58" y="104" width="12" height="9"/><rect x="110" y="104" width="12" height="9"/>
+    <rect x="84" y="126" width="12" height="9"/>
+    <rect x="218" y="60" width="10" height="8"/><rect x="240" y="60" width="10" height="8"/><rect x="262" y="60" width="10" height="8"/>
+    <rect x="218" y="84" width="10" height="8"/><rect x="262" y="84" width="10" height="8"/>
+    <rect x="240" y="108" width="10" height="8"/><rect x="218" y="132" width="10" height="8"/>
+  </g>
+  <!-- balconies -->
+  <g stroke="#221a30" stroke-width="3" opacity="0.8">
+    <path d="M48,54 H132 M48,76 H132 M48,98 H132 M48,120 H132 M48,142 H132"/>
+    <path d="M208,76 H280 M208,100 H280 M208,124 H280"/>
+  </g>
+  <!-- ground + tree -->
+  <rect y="156" width="360" height="44" fill="url(#agnd)"/>
+  <ellipse cx="166" cy="148" rx="26" ry="20" fill="#0a2325"/>
+  <rect x="163" y="156" width="6" height="20" fill="#0a2325"/>
+  <!-- bike leaning on wall: nowhere to lock -->
+  <g stroke="#0a2022" stroke-width="3.5" fill="none" stroke-linecap="round">
+    <circle cx="310" cy="178" r="11"/>
+    <circle cx="344" cy="178" r="11"/>
+    <path d="M310,178 L322,156 L338,158 L344,178 M322,156 L327,176 L310,178"/>
+  </g>
+</svg>

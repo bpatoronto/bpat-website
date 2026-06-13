@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import Reveal from './Reveal'
-import { spots, styleFor } from '../data/spots'
+import { spots, styleFor, photoFor, labelFor } from '../data/spots'
 
 export default function MapTeaser() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -30,27 +30,27 @@ export default function MapTeaser() {
     <section ref={sectionRef} className="relative overflow-hidden bg-white py-24 md:py-28">
       <div className="container-pg">
         <Reveal>
-          <div className="glass grain relative overflow-hidden p-8 md:p-12">
-            <div className="relative grid items-center gap-10 md:grid-cols-2">
+          <div className="glass grain relative overflow-hidden p-6 md:p-10">
+            <div className="relative flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <div>
                 <p className="eyebrow text-pine-600">The gap map</p>
-                <h2 className="mt-5 text-balance text-3xl font-bold uppercase tracking-[0.07em] text-pine-950 md:text-4xl">
+                <h2 className="mt-4 text-balance text-2xl font-bold uppercase tracking-[0.07em] text-pine-950 sm:text-3xl md:mt-5 md:text-4xl">
                   See where Toronto has nowhere to park.
                 </h2>
-                <p className="mt-5 text-base leading-relaxed text-pine-900/85">
-                  Every plaza without a rack, every building without storage — and every win.
-                  Spot a gap we missed? Drop a pin.
+                <p className="mt-4 max-w-xl text-base leading-relaxed text-pine-900/85">
+                  Every gap, every win — mapped. Spot one we missed? Drop a pin.
                 </p>
-                <Link to="/map" className="btn-solid mt-8 px-9! py-4!">
-                  Explore the map
-                  <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 10h12m-5-5 5 5-5 5" />
-                  </svg>
-                </Link>
               </div>
+              <Link to="/map" className="btn-solid shrink-0 self-start px-9! py-4! md:self-auto">
+                Explore the map
+                <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 10h12m-5-5 5 5-5 5" />
+                </svg>
+              </Link>
+            </div>
 
-              {/* Live preview of the gap map */}
-              <div className="relative h-64 overflow-hidden rounded-2xl border border-pine-600/15 shadow-[0_12px_40px_-16px_rgba(23,55,58,0.35)] md:h-80">
+            {/* Live preview of the gap map — full-width so it carries the section */}
+            <div className="relative mt-7 h-104 overflow-hidden rounded-2xl border border-pine-600/15 shadow-[0_12px_40px_-16px_rgba(23,55,58,0.35)] md:mt-9 md:h-136">
                 {showMap ? (
                   <MapContainer
                     center={[43.715, -79.36]}
@@ -71,9 +71,14 @@ export default function MapTeaser() {
                         pathOptions={styleFor(spot.category)}
                       >
                         <Popup>
-                          <div className="font-sans">
-                            <p className="m-0 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-pine-500">
-                              {spot.category === 'win' ? 'Win' : spot.category === 'plaza' ? 'Plaza gap' : 'Apartment gap'}
+                          <div className="w-44 font-sans">
+                            <img
+                              src={photoFor(spot.category)}
+                              alt={`${labelFor(spot.category)} placeholder illustration`}
+                              className="h-20 w-full rounded-lg object-cover"
+                            />
+                            <p className="m-0 mt-2 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-pine-500">
+                              {labelFor(spot.category)}
                             </p>
                             <p className="m-0 mt-1 text-sm font-semibold text-pine-950">{spot.name}</p>
                           </div>
@@ -92,7 +97,6 @@ export default function MapTeaser() {
                 >
                   Open the map →
                 </Link>
-              </div>
             </div>
           </div>
         </Reveal>

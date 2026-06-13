@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { MapContainer, TileLayer, CircleMarker, Popup, useMapEvents } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import Nav from '../components/Nav'
-import { spots, styleFor, type Category } from '../data/spots'
+import { spots, styleFor, photoFor, labelFor, type Category } from '../data/spots'
 
 // Pins dropped by visitors marking where they want cycling infrastructure.
 // Stored in localStorage until the mapping team has a real database.
@@ -106,9 +106,14 @@ export default function MapPage() {
             pathOptions={styleFor(spot.category)}
           >
             <Popup>
-              <div className="font-sans">
-                <p className="m-0 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-pine-500">
-                  {spot.category === 'win' ? 'Win' : spot.category === 'plaza' ? 'Plaza gap' : 'Apartment gap'}
+              <div className="w-60 font-sans">
+                <img
+                  src={photoFor(spot.category)}
+                  alt={`${labelFor(spot.category)} placeholder illustration`}
+                  className="h-28 w-full rounded-xl object-cover"
+                />
+                <p className="m-0 mt-3 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-pine-500">
+                  {labelFor(spot.category)}
                 </p>
                 <p className="m-0 mt-1 text-sm font-semibold text-pine-950">{spot.name}</p>
                 <p className="m-0 mt-1.5 text-xs leading-relaxed text-pine-900/70">{spot.note}</p>

@@ -16,13 +16,13 @@ const issues = [
   {
     number: '01',
     title: 'The Suburban Plaza Problem',
-    body: 'Plazas and strip malls have acres of car parking but often not a single rack. Ride to your local store and there’s nowhere safe to lock up.',
-    points: ['Acres of asphalt, zero racks', 'Short local trips made impossible', 'Theft risk at every errand'],
+    body: 'Acres of car parking, often not a single rack. Ride to the store and there’s nowhere safe to lock up.',
+    points: ['Acres of asphalt, zero racks', 'Short trips made impossible', 'Theft risk at every errand'],
   },
   {
     number: '02',
     title: 'The Apartment Building Problem',
-    body: 'Postwar apartment buildings rarely have the secure bike storage newer buildings must provide. Residents haul bikes up elevators — or give up on owning one.',
+    body: 'Postwar towers rarely have secure bike storage. Residents haul bikes up elevators — or give up on owning one.',
     points: ['No secure rooms in postwar towers', 'Bikes squeezed into small units', 'E-bike ownership off the table'],
   },
 ]
@@ -44,17 +44,15 @@ export default function Problem() {
         {/* Mission intro, planning-document style */}
         <Reveal>
           <p className="eyebrow text-center text-pine-600">The problem</p>
-          <p className="mx-auto mt-8 max-w-3xl text-center text-xl font-medium leading-relaxed text-pine-900 md:text-2xl">
+          <p className="mx-auto mt-7 max-w-3xl text-center text-lg font-medium leading-relaxed text-pine-900 md:mt-8 md:text-2xl">
             Bike parking is the start and end of every ride —{' '}
-            <span className="font-semibold text-pine-600">and Toronto is sorely lacking.</span>
-          </p>
-          <p className="mx-auto mt-6 max-w-2xl text-center text-base leading-relaxed text-pine-900/85">
-            It stops people from riding — or from owning a bike at all. Two gaps stand out.
+            <span className="font-semibold text-pine-600">and Toronto is sorely lacking.</span>{' '}
+            Two gaps stand out.
           </p>
         </Reveal>
 
         {/* Civic statements */}
-        <div className="mx-auto mt-20 flex max-w-4xl flex-col gap-10 border-l-4 border-pine-600 pl-7 md:pl-10">
+        <div className="mx-auto mt-16 flex max-w-4xl flex-col gap-8 border-l-4 border-pine-600 pl-6 md:mt-20 md:gap-10 md:pl-10">
           {statements.map((statement, i) => (
             <Reveal key={i} delay={i * 120}>
               <p className="statement text-pine-950">{statement}</p>
@@ -63,15 +61,15 @@ export default function Problem() {
         </div>
 
         {/* The two issues */}
-        <div className="mt-24 grid gap-8 md:grid-cols-2">
+        <div className="mt-20 grid gap-8 md:mt-24 md:grid-cols-2">
           {issues.map(({ number, title, body, points }, i) => (
             <Reveal key={number} delay={i * 150} className="h-full">
-              <article className="glass grain relative flex h-full flex-col overflow-hidden p-9 md:p-11">
+              <article className="glass grain relative flex h-full flex-col overflow-hidden p-7 md:p-11">
                 <span className="absolute -right-3 -top-7 select-none text-[7rem] font-bold leading-none text-pine-600/8">
                   {number}
                 </span>
                 <p className="eyebrow text-pine-600">Issue {number}</p>
-                <h3 className="mt-4 text-2xl font-semibold uppercase tracking-[0.06em] text-pine-950">
+                <h3 className="mt-4 text-xl font-semibold uppercase tracking-[0.06em] text-pine-950 md:text-2xl">
                   {title}
                 </h3>
                 <p className="mt-5 flex-1 text-[0.95rem] leading-relaxed text-pine-900/90">{body}</p>

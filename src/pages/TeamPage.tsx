@@ -6,15 +6,18 @@ import Reveal from '../components/Reveal'
 type Member = {
   name: string
   role: string
-  blurb: string
+  also?: string[]
 }
 
-// Placeholder roster — swap in real names, photos and bios as the team forms.
 const members: Member[] = [
-  { name: 'Richard L.', role: 'Founder', blurb: 'Started BPAT after one too many rides that ended with nowhere to lock up.' },
-  { name: 'Open seat', role: 'Mapping & Infrastructure Lead', blurb: 'Documents bike parking gaps across the city with mapping tools and street imagery.' },
-  { name: 'Open seat', role: 'Property Outreach Lead', blurb: 'Talks to plaza and apartment owners and turns conversations into installed racks.' },
-  { name: 'Open seat', role: 'Policy & Research Lead', blurb: 'Digs into bylaws, incentives and best practices from cities that got this right.' },
+  { name: 'Hafeez Alavi', role: 'Founder' },
+  { name: 'Zach Osborn', role: 'Policy Researcher', also: ['Mapping Researcher', 'Property Outreach'] },
+  { name: 'Emily Villett', role: 'Mapping & Infrastructure Researcher', also: ['Policy & Research Analyst', 'Property Outreach Coordinator'] },
+  { name: 'Joel', role: 'Policy Researcher', also: ['Mapping & Infrastructure', 'Property Outreach Coordinator'] },
+  { name: 'Aaryan', role: 'Mapping & Infrastructure', also: ['Grants & Partnerships'] },
+  { name: 'Richard', role: 'Web Developer' },
+  { name: 'Kyla Yu', role: 'Mapping & Infrastructure', also: ['Grants & Partnerships'] },
+  { name: 'Ben', role: 'Community & Stakeholder', also: ['Policy & Research'] },
 ]
 
 const initialsOf = (name: string) =>
@@ -46,27 +49,24 @@ export default function TeamPage() {
               The people behind the racks.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-pine-900/85">
-              BPAT is small, volunteer-built and growing. Most of these seats are still open —
-              which means the next name on this page could be yours.
+              Small, volunteer-built and growing — there&rsquo;s room for you too.
             </p>
           </Reveal>
 
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {members.map(({ name, role, blurb }, i) => (
-              <Reveal key={role} delay={(i % 4) * 100} className="h-full">
+            {members.map(({ name, role, also }, i) => (
+              <Reveal key={name} delay={(i % 4) * 100} className="h-full">
                 <article className="glass flex h-full flex-col items-start p-7">
-                  <span
-                    className={`flex h-14 w-14 items-center justify-center rounded-full text-lg font-bold ${
-                      name === 'Open seat'
-                        ? 'border-2 border-dashed border-pine-400 text-pine-500'
-                        : 'bg-pine-600 text-white'
-                    }`}
-                  >
-                    {name === 'Open seat' ? '?' : initialsOf(name)}
+                  <span className="flex h-14 w-14 items-center justify-center rounded-full bg-pine-600 text-lg font-bold text-white">
+                    {initialsOf(name)}
                   </span>
                   <h2 className="mt-5 text-base font-semibold text-pine-950">{name}</h2>
                   <p className="eyebrow mt-1.5 text-[0.6rem] tracking-[0.2em] text-pine-600">{role}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-pine-900/85">{blurb}</p>
+                  {also && (
+                    <p className="mt-3 text-xs leading-relaxed text-pine-900/70">
+                      Also: {also.join(' · ')}
+                    </p>
+                  )}
                 </article>
               </Reveal>
             ))}
