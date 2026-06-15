@@ -5,7 +5,7 @@ const guides = [
     audience: 'Plaza & storefront owners',
     title: 'A rack outside your door, this season',
     points: [
-      'About $XXX installed (placeholder figure)',
+      //'About $XXX installed (placeholder figure)',
       'Fits in half a parking spot or unused concrete',
       'We scope the site and recommend vendors',
     ],
