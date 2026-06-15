@@ -11,7 +11,7 @@ const links = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   // CTA waits until the reader is well past the hero, then animates in
-  const [showCta, setShowCta] = useState(false)
+  // const [showCta, setShowCta] = useState(false) // restore with Get involved CTA
   const [open, setOpen] = useState(false)
   const { pathname } = useLocation()
   // On the map page there's no hero to float over, keep the glass on
@@ -22,7 +22,7 @@ export default function Nav() {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 24)
-      setShowCta(window.scrollY > window.innerHeight * 1.5)
+      // setShowCta(window.scrollY > window.innerHeight * 1.5) // restore with Get involved CTA
     }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
