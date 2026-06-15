@@ -1,7 +1,5 @@
 import Reveal from './Reveal'
 import deepScene from '../assets/bg-deep.svg'
-import deepAbstract from '../assets/bg-deep-abstract.svg'
-import { useDesignStyle } from '../design-context'
 
 const steps = [
   {
@@ -22,12 +20,10 @@ const steps = [
 ]
 
 export default function Approach() {
-  const { style } = useDesignStyle()
-
   return (
     <section id="approach" className="grain relative isolate overflow-hidden py-24 text-white md:py-32">
       <img
-        src={style === 'scene' ? deepScene : deepAbstract}
+        src={deepScene}
         alt=""
         aria-hidden="true"
         loading="lazy"

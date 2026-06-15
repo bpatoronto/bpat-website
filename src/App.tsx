@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import MapPage from './pages/MapPage'
 import TeamPage from './pages/TeamPage'
-import { DesignStyleProvider } from './design'
 
 /** Honour hash anchors on navigation; otherwise reset scroll per page. */
 function ScrollManager() {
@@ -23,14 +22,12 @@ function ScrollManager() {
 export default function App() {
   return (
     <BrowserRouter>
-      <DesignStyleProvider>
-        <ScrollManager />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/map" element={<MapPage />} />
-          <Route path="/team" element={<TeamPage />} />
-        </Routes>
-      </DesignStyleProvider>
+      <ScrollManager />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/map" element={<MapPage />} />
+        <Route path="/team" element={<TeamPage />} />
+      </Routes>
     </BrowserRouter>
   )
 }

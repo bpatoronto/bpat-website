@@ -9,7 +9,7 @@ const guides = [
       'Fits in half a parking spot or unused concrete',
       'We scope the site and recommend vendors',
     ],
-    cta: { label: 'Get the plaza guide', href: 'mailto:hello@bpat.ca?subject=Bike%20parking%20for%20my%20plaza' },
+    cta: { label: 'Get the plaza guide', href: 'mailto:bpat.toronto@gmail.com?subject=Bike%20parking%20for%20my%20plaza' },
   },
   {
     audience: 'Apartment owners & managers',
@@ -19,7 +19,7 @@ const guides = [
       'Retains tenants, makes e-bike ownership possible',
       'Retrofits for postwar towers — no new construction',
     ],
-    cta: { label: 'Get the building guide', href: 'mailto:hello@bpat.ca?subject=Bike%20parking%20for%20my%20building' },
+    cta: { label: 'Get the building guide', href: 'mailto:bpat.toronto@gmail.com?subject=Bike%20parking%20for%20my%20building' },
   },
 ]
 

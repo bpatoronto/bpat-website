@@ -5,10 +5,10 @@ const statements = [
     Swaths of car parking. <span className="text-pine-600">Not a single place to lock a bike.</span>
   </>,
   <>
-    No secure storage at home. <span className="text-pine-600">Bikes in elevators, hallways and living rooms.</span>
+    No secure bike parking in older apartment buildings. <span className="text-pine-600">Elevators are already packed.</span>
   </>,
   <>
-    People want to ride. <span className="text-pine-600">The city gives them nowhere to stop.</span>
+    People want to ride. <span className="text-pine-600">The city gives them nowhere to lock.</span>
   </>,
 ]
 

@@ -32,7 +32,7 @@ const paths = [
     audience: 'Councillors & city staff',
     title: 'Explore a bike parking incentive or grant',
     blurb: 'A small incentive would let owners install racks at little or no cost.',
-    cta: { label: 'Explore the incentive', href: 'mailto:hello@bpat.ca?subject=Bike%20parking%20incentive%20or%20grant%20for%20my%20ward' },
+    cta: { label: 'Explore the incentive', href: 'mailto:bpat.toronto@gmail.com?subject=Bike%20parking%20incentive%20or%20grant%20for%20my%20ward' },
     icon: (
       <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 21h18M5 21V10m14 11V10" />
@@ -93,8 +93,8 @@ export default function GetInvolved() {
         <Reveal delay={150}>
           <p className="mt-14 text-center text-sm text-pine-900/80">
             Want to volunteer with us?{' '}
-            <a href="mailto:hello@bpat.ca?subject=I%20want%20to%20help%20BPAT" className="font-semibold text-pine-700 underline decoration-pine-600/40 underline-offset-2 hover:text-pine-600">
-              hello@bpat.ca
+            <a href="mailto:bpat.toronto@gmail.com?subject=I%20want%20to%20help%20BPAT" className="font-semibold text-pine-700 underline decoration-pine-600/40 underline-offset-2 hover:text-pine-600">
+              bpat.toronto@gmail.com
             </a>
           </p>
         </Reveal>

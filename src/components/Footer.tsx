@@ -14,7 +14,7 @@ const socials = [
   },
   {
     label: 'Bluesky',
-    href: 'https://bsky.app',
+    href: 'https://bsky.app/profile/bpat-toronto.bsky.social',
     path: 'M5.43 3.62C7.96 5.51 10.68 9.36 11.68 11.42c1-2.06 3.72-5.9 6.25-7.8 1.83-1.37 4.79-2.43 4.79.94 0 .67-.39 5.66-.61 6.47-.79 2.81-3.65 3.53-6.19 3.1 4.45.75 5.58 3.25 3.13 5.74-4.64 4.74-6.67-1.19-7.23-2.7-.1-.28-.15-.41-.15-.3 0-.11-.05.02-.15.3-.56 1.51-2.59 7.44-7.23 2.7-2.44-2.5-1.32-5 3.13-5.74-2.54.43-5.4-.28-6.18-3.1-.23-.8-.62-5.8-.62-6.47 0-3.37 2.96-2.31 4.8-.94Z',
   },
 ]
@@ -35,7 +35,7 @@ export default function Footer() {
           <nav className="flex flex-wrap gap-x-8 gap-y-3">
             <Link to="/#problem" className="text-xs font-medium uppercase tracking-[0.2em] text-white/85 transition-colors hover:text-white">The Problem</Link>
             <Link to="/#approach" className="text-xs font-medium uppercase tracking-[0.2em] text-white/85 transition-colors hover:text-white">Our Approach</Link>
-            <Link to="/map" className="text-xs font-medium uppercase tracking-[0.2em] text-white/85 transition-colors hover:text-white">Gap Map</Link>
+            {/* <Link to="/map" ...>Gap Map</Link> temporarily hidden */}
             <Link to="/#join" className="text-xs font-medium uppercase tracking-[0.2em] text-white/85 transition-colors hover:text-white">Get Involved</Link>
             <Link to="/team" className="text-xs font-medium uppercase tracking-[0.2em] text-white/85 transition-colors hover:text-white">Meet the Team</Link>
           </nav>
@@ -63,7 +63,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Bike Parking Alliance of Toronto. Every ride ends at a rack.
           </p>
           <p className="text-xs text-white/70">
-            Made with care in Toronto · <a href="mailto:hello@bpat.ca" className="underline decoration-white/30 underline-offset-2 hover:text-white">hello@bpat.ca</a>
+            Made with care in Toronto · <a href="mailto:bpat.toronto@gmail.com" className="underline decoration-white/30 underline-offset-2 hover:text-white">bpat.toronto@gmail.com</a>
           </p>
         </div>
       </div>

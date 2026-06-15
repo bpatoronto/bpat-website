@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Logo from './Logo'
-import { useDesignStyle } from '../design-context'
 
 const links = [
   { to: '/#problem', label: 'The Problem' },
   { to: '/#approach', label: 'Our Approach' },
-  { to: '/map', label: 'Gap Map' },
+  // { to: '/map', label: 'Gap Map' }, // temporarily hidden
 ]
 
 export default function Nav() {
@@ -15,12 +14,10 @@ export default function Nav() {
   const [showCta, setShowCta] = useState(false)
   const [open, setOpen] = useState(false)
   const { pathname } = useLocation()
-  const { style } = useDesignStyle()
   // On the map page there's no hero to float over — keep the glass on
   const solid = scrolled || pathname !== '/'
-  // Over the dusk scene hero the bar is transparent, so type flips to white;
-  // the abstract hero is light, so type stays dark
-  const onDark = !solid && style === 'scene'
+  // Over the photo hero the bar is transparent, so type flips to white
+  const onDark = !solid
 
   useEffect(() => {
     const onScroll = () => {

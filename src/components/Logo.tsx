@@ -6,12 +6,27 @@ type LogoProps = {
   compact?: boolean
 }
 
-/** Ring-and-post mark, echoing the BPAT letterhead logo. */
+/** Ring-and-post mark that doubles as a "P" for parking — the BPAT logo. */
 export function LogoMark({ className = 'h-9 w-9' }: { className?: string }) {
   return (
-    <svg viewBox="0 0 64 64" className={className} aria-hidden="true">
-      <circle cx="32" cy="24" r="14" fill="none" stroke="currentColor" strokeWidth="7" />
-      <line x1="32" y1="38" x2="32" y2="56" stroke="currentColor" strokeWidth="7" strokeLinecap="round" />
+    <svg
+      viewBox="0 0 64 64"
+      className={className}
+      aria-hidden="true"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      {/* ring */}
+      <circle cx="30" cy="18" r="7.6" />
+      {/* post down to the base */}
+      <path d="M30 25.4V55" />
+      {/* the "P" bowl on the post */}
+      <path d="M30 31c11.5 0 11.5 10 0 10" />
+      {/* base bar */}
+      <path d="M22 55h16" />
     </svg>
   )
 }
