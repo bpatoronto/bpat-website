@@ -7,6 +7,7 @@ export default function Hero() {
           src="/bike-bg.jpeg"
           alt=""
           aria-hidden="true"
+          fetchPriority="high"
           decoding="async"
           className="h-full w-full object-cover"
         />

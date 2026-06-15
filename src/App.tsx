@@ -1,8 +1,11 @@
-import { useEffect } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import HomePage from './pages/HomePage'
-import MapPage from './pages/MapPage'
-import TeamPage from './pages/TeamPage'
+
+// Split heavy / secondary routes out of the initial bundle.
+// MapPage pulls in leaflet (~140KB), so it must not load on the homepage.
+const MapPage = lazy(() => import('./pages/MapPage'))
+const TeamPage = lazy(() => import('./pages/TeamPage'))
 
 /** Honour hash anchors on navigation; otherwise reset scroll per page. */
 function ScrollManager() {
@@ -23,11 +26,13 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollManager />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/map" element={<MapPage />} />
-        <Route path="/team" element={<TeamPage />} />
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/map" element={<MapPage />} />
+          <Route path="/team" element={<TeamPage />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   )
 }

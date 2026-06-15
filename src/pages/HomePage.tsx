@@ -5,7 +5,7 @@ import Problem from '../components/Problem'
 import Approach from '../components/Approach'
 import Owners from '../components/Owners'
 // import MapTeaser from '../components/MapTeaser' // temporarily hidden
-import GetInvolved from '../components/GetInvolved'
+// import GetInvolved from '../components/GetInvolved' // temporarily hidden
 import Footer from '../components/Footer'
 import TestBadge from '../components/TestBadge'
 
@@ -20,7 +20,7 @@ export default function HomePage() {
         <Approach />
         <Owners />
         {/* <MapTeaser /> temporarily hidden */}
-        <GetInvolved />
+        {/* <GetInvolved /> temporarily hidden */}
       </main>
       <Footer />
       <TestBadge />
