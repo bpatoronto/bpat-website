@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="360" height="200" viewBox="0 0 360 200" preserveAspectRatio="xMidYMid slice">
-  <!-- Placeholder: suburban plaza — lots of asphalt, no racks. -->
+  <!-- Placeholder: suburban plaza, lots of asphalt, no racks. -->
   <defs>
     <linearGradient id="psky" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#8a5a6d"/>

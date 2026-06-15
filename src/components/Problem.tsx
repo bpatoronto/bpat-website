@@ -22,7 +22,7 @@ const issues = [
   {
     number: '02',
     title: 'The Apartment Building Problem',
-    body: 'Postwar towers rarely have secure bike storage. Residents haul bikes up elevators — or give up on owning one.',
+    body: 'Postwar towers rarely have secure bike storage. Residents haul bikes up elevators, or give up on owning one.',
     points: ['No secure rooms in postwar towers', 'Bikes squeezed into small units', 'E-bike ownership off the table'],
   },
 ]
@@ -45,7 +45,7 @@ export default function Problem() {
         <Reveal>
           <p className="eyebrow text-center text-pine-600">The problem</p>
           <p className="mx-auto mt-7 max-w-3xl text-center text-lg font-medium leading-relaxed text-pine-900 md:mt-8 md:text-2xl">
-            Bike parking is the start and end of every ride —{' '}
+            Bike parking is the start and end of every ride,{' '}
             <span className="font-semibold text-pine-600">and Toronto is sorely lacking.</span>{' '}
             Two gaps stand out.
           </p>

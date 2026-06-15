@@ -17,7 +17,7 @@ const guides = [
     points: [
       'Convert a garage corner or dead space by the elevators',
       'Retains tenants, makes e-bike ownership possible',
-      'Retrofits for postwar towers — no new construction',
+      'Retrofits for postwar towers, no new construction',
     ],
     cta: { label: 'Get the building guide', href: 'mailto:bpat.toronto@gmail.com?subject=Bike%20parking%20for%20my%20building' },
   },

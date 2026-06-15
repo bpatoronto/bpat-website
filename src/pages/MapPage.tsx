@@ -186,7 +186,7 @@ export default function MapPage() {
           Nowhere to park
         </h1>
         <p className="mt-3 text-xs font-light leading-relaxed text-pine-900/70 md:text-sm">
-          Places worth biking to, with no safe place to lock a bike — and the wins that show
+          Places worth biking to, with no safe place to lock a bike, and the wins that show
           what&rsquo;s possible. Our mapping team is documenting gaps across the city.
         </p>
 
@@ -214,10 +214,10 @@ export default function MapPage() {
             <span className="h-3 w-3 rounded-full border-2 border-pine-900 bg-pine-200" /> Apartments without secure storage
           </li>
           <li className="flex items-center gap-2.5 text-xs font-medium text-pine-900/80">
-            <span className="h-3 w-3 rounded-full bg-pine-600" /> Win — parking installed
+            <span className="h-3 w-3 rounded-full bg-pine-600" /> Win, parking installed
           </li>
           <li className="flex items-center gap-2.5 text-xs font-medium text-pine-900/80">
-            <span className="h-3 w-3 rounded-full border-2 border-dashed border-pine-500 bg-pine-100" /> Your pin — infrastructure wanted
+            <span className="h-3 w-3 rounded-full border-2 border-dashed border-pine-500 bg-pine-100" /> Your pin, infrastructure wanted
           </li>
         </ul>
 
@@ -235,7 +235,7 @@ export default function MapPage() {
           }}
           className={`${adding ? 'btn-glass bg-white/90' : 'btn-solid'} whitespace-nowrap px-7! shadow-2xl`}
         >
-          {adding ? 'Click the map to place your pin — or tap to cancel' : 'Want better cycling here? Drop a pin'}
+          {adding ? 'Click the map to place your pin, or tap to cancel' : 'Want better cycling here? Drop a pin'}
         </button>
         <Link
           to="/#join"

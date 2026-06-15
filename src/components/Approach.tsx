@@ -5,7 +5,7 @@ const steps = [
   {
     step: 'Step 1',
     title: 'Map the gaps',
-    body: 'We document where parking is missing — and who owns the property.',
+    body: 'We document where parking is missing, and who owns the property.',
   },
   {
     step: 'Step 2',
@@ -40,7 +40,7 @@ export default function Approach() {
             <span className="text-pine-200">We go straight to the source.</span>
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/90 md:mt-7">
-            A rack costs roughly $XXX installed — so instead of waiting years for bylaws, we go
+            {/*A rack costs roughly $XXX installed*/} Instead of waiting years for bylaws, we go
             to property owners today.
           </p>
         </Reveal>
@@ -66,7 +66,7 @@ export default function Approach() {
                 Then we change the rules.
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-white/85 md:text-base">
-                The end goal: city incentives — and one day, requirements. Every rack makes
+                The end goal: city incentives, and one day, requirements. Every rack makes
                 that case stronger.
               </p>
             </div>

@@ -38,7 +38,7 @@ export default function MapTeaser() {
                   See where Toronto has nowhere to park.
                 </h2>
                 <p className="mt-4 max-w-xl text-base leading-relaxed text-pine-900/85">
-                  Every gap, every win — mapped. Spot one we missed? Drop a pin.
+                  Every gap, every win, mapped. Spot one we missed? Drop a pin.
                 </p>
               </div>
               <Link to="/map" className="btn-solid shrink-0 self-start px-9! py-4! md:self-auto">
@@ -49,7 +49,7 @@ export default function MapTeaser() {
               </Link>
             </div>
 
-            {/* Live preview of the gap map — full-width so it carries the section */}
+            {/* Live preview of the gap map, full-width so it carries the section */}
             <div className="relative mt-7 h-104 overflow-hidden rounded-2xl border border-pine-600/15 shadow-[0_12px_40px_-16px_rgba(23,55,58,0.35)] md:mt-9 md:h-136">
                 {showMap ? (
                   <MapContainer
@@ -89,7 +89,7 @@ export default function MapTeaser() {
                 ) : (
                   <div className="h-full w-full bg-pine-100" />
                 )}
-                {/* Corner link into the full map — doesn't block panning */}
+                {/* Corner link into the full map, doesn't block panning */}
                 <Link
                   to="/map"
                   aria-label="Explore the full gap map"

@@ -14,7 +14,7 @@ export default function Nav() {
   const [showCta, setShowCta] = useState(false)
   const [open, setOpen] = useState(false)
   const { pathname } = useLocation()
-  // On the map page there's no hero to float over — keep the glass on
+  // On the map page there's no hero to float over, keep the glass on
   const solid = scrolled || pathname !== '/'
   // Over the photo hero the bar is transparent, so type flips to white
   const onDark = !solid
@@ -56,7 +56,7 @@ export default function Nav() {
         </ul>
 
         <div className="flex items-center gap-2">
-          {/* Primary CTA — appears top right well past the hero, animating in.
+          {/* Primary CTA, appears top right well past the hero, animating in.
               Hidden on mobile: the pill is too tight, and the menu has its own CTA. */}
           <Link
             to="/#join"
