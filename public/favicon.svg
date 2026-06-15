@@ -1,5 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="14" fill="#276266"/>
-  <circle cx="32" cy="26" r="13" fill="none" stroke="#ffffff" stroke-width="5"/>
-  <line x1="32" y1="39" x2="32" y2="54" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+  <g transform="translate(2,-1)" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- ring -->
+    <circle cx="30" cy="18" r="7.6"/>
+    <!-- post down to the base -->
+    <path d="M30 25.4V55"/>
+    <!-- the "P" bowl on the post -->
+    <path d="M30 31c11.5 0 11.5 10 0 10"/>
+    <!-- base bar -->
+    <path d="M22 55h16"/>
+  </g>
 </svg>
