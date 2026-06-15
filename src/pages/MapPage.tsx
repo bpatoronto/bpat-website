@@ -237,12 +237,14 @@ export default function MapPage() {
         >
           {adding ? 'Click the map to place your pin, or tap to cancel' : 'Want better cycling here? Drop a pin'}
         </button>
+        {/* Get involved CTA temporarily hidden
         <Link
           to="/#join"
           className="text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-pine-800/70 transition-colors hover:text-pine-600"
         >
           or get involved →
         </Link>
+        */}
       </div>
     </div>
   )

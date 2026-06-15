@@ -70,9 +70,11 @@ export default function Approach() {
                 that case stronger.
               </p>
             </div>
+            {/* Get involved CTA temporarily hidden
             <a href="#join" className="btn-glass-dark shrink-0">
               Help us get there
             </a>
+            */}
           </div>
         </Reveal>
       </div>

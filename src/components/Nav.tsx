@@ -58,6 +58,7 @@ export default function Nav() {
         <div className="flex items-center gap-2">
           {/* Primary CTA, appears top right well past the hero, animating in.
               Hidden on mobile: the pill is too tight, and the menu has its own CTA. */}
+          {/* Get involved CTA temporarily hidden
           <Link
             to="/#join"
             tabIndex={showCta ? 0 : -1}
@@ -70,6 +71,7 @@ export default function Nav() {
           >
             Get involved
           </Link>
+          */}
 
           {/* Mobile toggle */}
           <button
@@ -101,11 +103,13 @@ export default function Nav() {
                 </Link>
               </li>
             ))}
+            {/* Get involved CTA temporarily hidden
             <li>
               <Link to="/#join" onClick={() => setOpen(false)} className="btn-solid w-full">
                 Get involved
               </Link>
             </li>
+            */}
           </ul>
         </div>
       )}

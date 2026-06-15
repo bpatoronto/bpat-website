@@ -31,6 +31,7 @@ export default function Hero() {
           that, one rack at a time.
         </p>
 
+        {/* Get involved CTA temporarily hidden
         <div className="mt-10">
           <a href="#join" className="btn-solid">
             Get involved
@@ -39,6 +40,7 @@ export default function Hero() {
             </svg>
           </a>
         </div>
+        */}
 
       </div>
 

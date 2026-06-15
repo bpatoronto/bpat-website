@@ -4,12 +4,12 @@ import Logo from './Logo'
 const socials = [
   {
     label: 'Instagram',
-    href: 'https://instagram.com',
+    href: 'https://www.instagram.com/bpat.toronto/',
     path: 'M12 2.2c3.2 0 3.6 0 4.8.07 3.25.15 4.77 1.7 4.92 4.92.06 1.27.07 1.65.07 4.81 0 3.17-.01 3.54-.07 4.81-.15 3.22-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.81.07-3.16 0-3.54-.01-4.8-.07-3.27-.15-4.78-1.7-4.93-4.93C2.2 15.55 2.2 15.17 2.2 12c0-3.16.01-3.53.07-4.8.15-3.23 1.66-4.78 4.92-4.93C8.46 2.2 8.84 2.2 12 2.2Zm0 3.7a6.1 6.1 0 1 0 0 12.2 6.1 6.1 0 0 0 0-12.2Zm0 2.2a3.9 3.9 0 1 1 0 7.8 3.9 3.9 0 0 1 0-7.8Zm6.35-3.8a1.42 1.42 0 1 0 0 2.85 1.42 1.42 0 0 0 0-2.85Z',
   },
   {
     label: 'X',
-    href: 'https://x.com',
+    href: 'https://x.com/BPAT_Toronto',
     path: 'M18.9 2H22l-6.77 7.74L23.2 22h-6.23l-4.88-6.38L6.5 22H3.38l7.24-8.28L2.8 2h6.39l4.41 5.83L18.9 2Zm-1.1 18.13h1.73L7.36 3.77H5.5l12.3 16.36Z',
   },
   {
@@ -36,7 +36,7 @@ export default function Footer() {
             <Link to="/#problem" className="text-xs font-medium uppercase tracking-[0.2em] text-white/85 transition-colors hover:text-white">The Problem</Link>
             <Link to="/#approach" className="text-xs font-medium uppercase tracking-[0.2em] text-white/85 transition-colors hover:text-white">Our Approach</Link>
             {/* <Link to="/map" ...>Gap Map</Link> temporarily hidden */}
-            <Link to="/#join" className="text-xs font-medium uppercase tracking-[0.2em] text-white/85 transition-colors hover:text-white">Get Involved</Link>
+            {/* <Link to="/#join" ...>Get Involved</Link> temporarily hidden */}
             <Link to="/team" className="text-xs font-medium uppercase tracking-[0.2em] text-white/85 transition-colors hover:text-white">Meet the Team</Link>
           </nav>
 
