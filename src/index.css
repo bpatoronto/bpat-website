@@ -70,7 +70,7 @@ body {
   }
 
   .btn-solid {
-    @apply bg-pine-600 text-white shadow-[0_10px_30px_-10px_rgba(39,98,102,0.7)] hover:-translate-y-0.5 hover:bg-pine-700 hover:shadow-[0_16px_36px_-12px_rgba(39,98,102,0.8)];
+    @apply bg-pine-600 text-white hover:-translate-y-0.5 hover:bg-pine-700;
   }
 
   .btn-glass {
