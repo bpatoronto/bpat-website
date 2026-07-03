@@ -203,7 +203,7 @@ export default function TeamPage() {
                     What I'd change about Toronto
                   </p>
                   <blockquote className="mt-3 border-l-2 border-pine-600/40 pl-4 text-base leading-relaxed text-pine-900/90">
-                    {selected.change ?? <span className="italic text-pine-900/50">Answer coming soon.</span>}
+                    {selected.change || <span className="italic text-pine-900/50">Answer coming soon.</span>}
                   </blockquote>
 
                   <div className="mt-8">

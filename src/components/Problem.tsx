@@ -51,13 +51,29 @@ export default function Problem() {
           </p>
         </Reveal>
 
-        {/* Civic statements */}
-        <div className="mx-auto mt-16 flex max-w-4xl flex-col gap-8 border-l-4 border-pine-600 pl-6 md:mt-20 md:gap-10 md:pl-10">
-          {statements.map((statement, i) => (
-            <Reveal key={i} delay={i * 120}>
-              <p className="statement text-pine-950">{statement}</p>
-            </Reveal>
-          ))}
+        <div className="mt-16 grid items-center gap-12 lg:mt-20 lg:grid-cols-[minmax(0,1fr)_minmax(260px,360px)] lg:gap-16">
+          {/* Civic statements */}
+          <div className="flex flex-col gap-8 border-l-4 border-pine-600 pl-6 md:gap-10 md:pl-10">
+            {statements.map((statement, i) => (
+              <Reveal key={i} delay={i * 120}>
+                <p className="statement text-pine-950">{statement}</p>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={180} className="mx-auto w-full max-w-[20rem] sm:max-w-lg lg:max-w-none">
+            <div className="glass overflow-hidden p-2">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/5W0vdAh3J0E"
+                title="BPAT on YouTube"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="aspect-[9/16] w-full rounded-2xl border-0"
+              />
+            </div>
+          </Reveal>
         </div>
 
         {/* The two issues */}
