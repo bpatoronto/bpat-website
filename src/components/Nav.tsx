@@ -5,6 +5,7 @@ import Logo from './Logo'
 const links = [
   { to: '/#problem', label: 'The Problem' },
   { to: '/#approach', label: 'Our Approach' },
+  { to: '/team', label: 'Meet the Team' },
   // { to: '/map', label: 'Gap Map' }, // temporarily hidden
 ]
 
