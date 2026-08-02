@@ -7,26 +7,24 @@ import Reveal from '../components/Reveal'
 type Member = {
   name: string
   role: string
-  /** Their answer to "What would you change about Toronto?" */
-  change?: string
   linkedin?: string
   instagram?: string
 }
 
 const members: Member[] = [
-  { name: 'Hafeez Alavi', role: 'Founder and Executive Director', change: "More pedestrian streets!" },
-  { name: 'Joel Matthew', role: 'Policy and Research Analyst', change: "PRESTO everywhere, including Bike Share and the Toronto Island ferries!"},
-  { name: 'Rae Mahboob', role: 'Social Media Coordinator', change: "Affordable housing!"},
-  { name: 'Richard Li', role: 'Software Developer', change: "Less LRT development, more subway development!" },
-  { name: 'Ben Corrigan', role: 'Community and Stakeholder Relations', change: "Close Billy Bishop"},
-  { name: 'Kyla Yu', role: 'Mapping and Infrastructure Researcher', change: "" },
-  { name: 'Gregory Campos-Hohn', role: 'Mapping and Infrastructure Researcher', change: "Transit signal priority for streetcars" },
-  { name: 'Emily Villett', role: 'Mapping and Infrastructure Researcher', change: "More third places!" },
-  { name: 'Rayyan Mia', role: 'Mapping and Infrastructure Researcher', change: "More missing middle housing options (row houses, duplexes, etc)" },
-  { name: 'Ana Marelja', role: 'Property Outreach Coordinator', change: "" },
-  { name: 'Zachary Osborn', role: 'Property Outreach Coordinator', change: "Using heritage protection for Toronto music venues" },
-  { name: 'Aaryan Dave', role: 'Grants and Partnerships Coordinator', change: "More raised platforms for streetcar boarding" },
-  { name: 'Kyla Howe', role: 'Social Media Coordinator', change: "" },
+  { name: 'Hafeez Alavi', role: 'Founder and Executive Director' },
+  { name: 'Joel Matthew', role: 'Policy and Research Analyst' },
+  { name: 'Rae Mahboob', role: 'Social Media Coordinator' },
+  { name: 'Richard Li', role: 'Software Developer' },
+  { name: 'Ben Corrigan', role: 'Community and Stakeholder Relations' },
+  { name: 'Kyla Yu', role: 'Mapping and Infrastructure Researcher' },
+  { name: 'Gregory Campos-Hohn', role: 'Mapping and Infrastructure Researcher' },
+  { name: 'Emily Villett', role: 'Mapping and Infrastructure Researcher' },
+  { name: 'Rayyan Mia', role: 'Mapping and Infrastructure Researcher' },
+  { name: 'Ana Marelja', role: 'Property Outreach Coordinator' },
+  { name: 'Zachary Osborn', role: 'Property Outreach Coordinator' },
+  { name: 'Aaryan Dave', role: 'Grants and Partnerships Coordinator' },
+  { name: 'Kyla Howe', role: 'Social Media Coordinator' },
 ]
 
 const headshotOf = (name: string) =>
@@ -198,13 +196,6 @@ export default function TeamPage() {
                 <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
                   <h2 className="mt-6 text-xl font-bold text-pine-950">{selected.name}</h2>
                   <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-pine-600">{selected.role}</p>
-
-                  <p className="mt-8 text-xs font-semibold uppercase tracking-wide text-pine-900/60">
-                    What I'd change about Toronto
-                  </p>
-                  <blockquote className="mt-3 border-l-2 border-pine-600/40 pl-4 text-base leading-relaxed text-pine-900/90">
-                    {selected.change || <span className="italic text-pine-900/50">Answer coming soon.</span>}
-                  </blockquote>
 
                   <div className="mt-8">
                     <SocialLinks member={selected} />

@@ -10,7 +10,28 @@
       "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --hide-scrollbars --window-size=1440,3600 --screenshot=/tmp/bpat-home.png \"http://localhost:5199/\")",
       "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --hide-scrollbars --window-size=1440,900 --virtual-time-budget=6000 --screenshot=/tmp/bpat-map.png \"http://localhost:5199/map\")",
       "Read(//tmp/**)",
-      "Read(//private/tmp/**)"
+      "Read(//private/tmp/**)",
+      "Bash(npx eslint *)",
+      "Bash(sed -i '' \"s|import { useDesignStyle } from '../design'|import { useDesignStyle } from '../design-context'|\" src/components/Approach.tsx src/components/Nav.tsx src/components/Hero.tsx)",
+      "Bash(sed -i '' \"s|import { useDesignStyle, type DesignStyle } from '../design'|import { useDesignStyle, type DesignStyle } from '../design-context'|\" src/components/DesignToggle.tsx)",
+      "Bash(qlmanage -t -s 960 -o /tmp /Users/richardli/dev/bpat/src/assets/bg-hero.svg /Users/richardli/dev/bpat/src/assets/bg-deep.svg /Users/richardli/dev/bpat/src/assets/bg-hero-abstract.svg)",
+      "Bash(qlmanage -t -s 1920 -o /tmp /Users/richardli/dev/bpat/src/assets/bg-hero.svg)",
+      "Bash(sips -c 700 960 --cropOffset 250 960 /tmp/bg-hero.svg.png --out /tmp/hero-right.png)",
+      "Bash(sips -c 760 960 --cropOffset 520 960 /tmp/bg-hero.svg.png --out /tmp/hero-br.png)",
+      "Bash(sips -c 760 960 --cropOffset 520 0 /tmp/bg-hero.svg.png --out /tmp/hero-bl.png)",
+      "Bash(sips -g pixelWidth -g pixelHeight /tmp/bg-hero.svg.png)",
+      "Bash(sips -c 800 600 --cropOffset 500 1250 /tmp/bg-hero.svg.png --out /tmp/hero-tower.png)",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --screenshot=/tmp/hero-chrome.png --window-size=1920,1280 --hide-scrollbars \"file:///Users/richardli/dev/bpat/src/assets/bg-hero.svg\")",
+      "Bash(nohup npx vite preview --port 4173)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4173/)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless --disable-gpu --screenshot=/tmp/site-hero.png --window-size=1440,900 --hide-scrollbars --virtual-time-budget=8000 http://localhost:4173/)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless --disable-gpu --screenshot=/tmp/site-team.png --window-size=1440,900 --hide-scrollbars --virtual-time-budget=8000 http://localhost:4173/team)",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --screenshot=/tmp/site-full.png --window-size=1440,7200 --hide-scrollbars --virtual-time-budget=15000 \"http://localhost:4173/\")",
+      "Bash(sips -g pixelHeight /tmp/site-full.png)",
+      "Bash(sips -c 1800 1440 --cropOffset 1700 0 /tmp/site-full.png --out /tmp/site-mid1.png)",
+      "Bash(sips -c 1800 1440 --cropOffset 3500 0 /tmp/site-full.png --out /tmp/site-mid2.png)",
+      "Bash(sips -c 1900 1440 --cropOffset 5300 0 /tmp/site-full.png --out /tmp/site-bottom.png)",
+      "Bash(node -e \"console.log\\(require\\('puppeteer-core/package.json'\\).version\\)\")"
     ]
   }
 }
