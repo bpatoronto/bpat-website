@@ -43,12 +43,12 @@ export default function Problem() {
       <div className="container-pg relative">
         {/* Mission intro, planning-document style */}
         <Reveal>
-          <p className="eyebrow text-center text-pine-600">The problem</p>
-          <p className="mx-auto mt-7 max-w-3xl text-center text-lg font-medium leading-relaxed text-pine-900 md:mt-8 md:text-2xl">
+          <p className="eyebrow text-center text-pine-600">The problem BPAT is solving</p>
+          <h2 className="mx-auto mt-7 max-w-3xl text-center text-lg font-medium leading-relaxed text-pine-900 md:mt-8 md:text-2xl">
             Bike parking is the start and end of every ride,{' '}
             <span className="font-semibold text-pine-600">and Toronto is sorely lacking.</span>{' '}
             Two gaps stand out.
-          </p>
+          </h2>
         </Reveal>
 
         <div className="mt-16 grid items-center gap-12 lg:mt-20 lg:grid-cols-[minmax(0,1fr)_minmax(260px,360px)] lg:gap-16">

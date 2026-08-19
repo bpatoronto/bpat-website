@@ -4,6 +4,7 @@ import Ticker from '../components/Ticker'
 import Problem from '../components/Problem'
 import Approach from '../components/Approach'
 import Owners from '../components/Owners'
+import FAQ from '../components/FAQ'
 // import MapTeaser from '../components/MapTeaser' // temporarily hidden
 // import GetInvolved from '../components/GetInvolved' // temporarily hidden
 import Footer from '../components/Footer'
@@ -19,6 +20,7 @@ export default function HomePage() {
         <Problem />
         <Approach />
         <Owners />
+        <FAQ />
         {/* <MapTeaser /> temporarily hidden */}
         {/* <GetInvolved /> temporarily hidden */}
       </main>

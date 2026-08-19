@@ -17,7 +17,7 @@ export default function Hero() {
 
       <div className="container-pg flex flex-1 flex-col items-center justify-center pb-24 pt-32 text-center md:pb-28 md:pt-40">
         <p className="eyebrow mb-6 rounded-full border border-white/30 bg-pine-950/30 px-4 py-2 text-white md:mb-7 md:px-5 md:py-2.5">
-          A new alliance for Toronto
+          BPAT · Bike Parking Alliance of Toronto
         </p>
 
         <h1 className="text-balance text-4xl font-bold uppercase leading-[1.15] tracking-[0.08em] text-white [text-shadow:0_2px_24px_rgba(20,15,40,0.45)] sm:text-6xl md:text-7xl md:tracking-widest">
@@ -27,8 +27,8 @@ export default function Hero() {
         </h1>
 
         <p className="mt-7 max-w-xl text-balance text-base leading-relaxed text-white/95 [text-shadow:0_1px_12px_rgba(20,15,40,0.4)] md:mt-8 md:text-lg">
-          Toronto doesn&rsquo;t have nearly enough places to park a bike. We&rsquo;re fixing
-          that, one rack at a time.
+          BPAT maps where Toronto is missing bike parking and works directly with property
+          owners to get racks in the ground.
         </p>
 
         {/* Get involved CTA temporarily hidden

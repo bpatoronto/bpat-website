@@ -60,7 +60,7 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 md:flex-row md:items-center">
           <p className="text-xs text-white/70">
-            © {new Date().getFullYear()} Bike Parking Alliance of Toronto. Every ride ends at a rack.
+            © {new Date().getFullYear()} BPAT (Bike Parking Alliance of Toronto). Every ride ends at a rack.
           </p>
           <p className="text-xs text-white/70">
             Made with care in Toronto · <a href="mailto:bpat.toronto@gmail.com" className="underline decoration-white/30 underline-offset-2 hover:text-white">bpat.toronto@gmail.com</a>

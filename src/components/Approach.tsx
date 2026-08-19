@@ -33,11 +33,11 @@ export default function Approach() {
 
       <div className="container-pg">
         <Reveal>
-          <p className="eyebrow text-pine-200">Our approach</p>
+          <p className="eyebrow text-pine-200">How BPAT works</p>
           <h2 className="mt-6 max-w-3xl text-balance text-2xl font-bold uppercase leading-tight tracking-[0.08em] sm:text-3xl md:text-5xl">
             We don&rsquo;t wait for policy.
             <br />
-            <span className="text-pine-200">We go straight to the source.</span>
+            <span className="text-pine-200">BPAT goes straight to the source.</span>
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/90 md:mt-7">
             {/*A rack costs roughly $XXX installed*/} Instead of waiting years for bylaws, we go
