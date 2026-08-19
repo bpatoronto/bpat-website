@@ -6,7 +6,7 @@ const links = [
   { to: '/#problem', label: 'The Problem' },
   { to: '/#approach', label: 'Our Approach' },
   { to: '/team', label: 'Meet the Team' },
-  // { to: '/map', label: 'Gap Map' }, // temporarily hidden
+  { to: '/map', label: 'Parking Map' },
 ]
 
 export default function Nav() {
