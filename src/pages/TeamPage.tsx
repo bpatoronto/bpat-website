@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { AnimatePresence, motion } from 'framer-motion'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
@@ -119,6 +120,11 @@ export default function TeamPage() {
 
   return (
     <>
+      <Helmet>
+        <title>BPAT Team – Meet the Bike Parking Alliance of Toronto</title>
+        <meta name="description" content="Meet the BPAT team — the youth-led planners and advocates building secure bike parking across Toronto." />
+        <link rel="canonical" href="https://bpat.ca/team" />
+      </Helmet>
       <Nav />
       <main className="relative overflow-hidden bg-pine-50 pb-24 pt-40">
         <div
