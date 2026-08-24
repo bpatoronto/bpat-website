@@ -4,7 +4,7 @@ import Reveal from './Reveal'
 const faqs = [
   {
     q: 'What is BPAT?',
-    a: 'BPAT stands for the Bike Parking Alliance of Toronto. We're a grassroots group that maps where bike parking is missing in Toronto and works directly with property owners to get racks installed.',
+    a: "BPAT stands for the Bike Parking Alliance of Toronto. We're a grassroots group that maps where bike parking is missing in Toronto and works directly with property owners to get racks installed.",
   },
   {
     q: 'What does BPAT stand for?',
@@ -20,11 +20,11 @@ const faqs = [
   },
   {
     q: 'How can I get involved with BPAT?',
-    a: 'Email bpat.toronto@gmail.com or follow us on Instagram (@bpat.toronto), X (@BPAT_Toronto), or Bluesky. We're always looking for people who want to help map gaps or talk to property owners.',
+    a: "Email bpat.toronto@gmail.com or follow us on Instagram (@bpat.toronto), X (@BPAT_Toronto), or Bluesky. We're always looking for people who want to help map gaps or talk to property owners.",
   },
   {
     q: 'Does BPAT work with the City of Toronto?',
-    a: 'BPAT's approach is to go directly to property owners rather than wait for city policy. But every rack we install builds the case for future city incentives and requirements.',
+    a: "BPAT's approach is to go directly to property owners rather than wait for city policy. But every rack we install builds the case for future city incentives and requirements.",
   },
 ]
 

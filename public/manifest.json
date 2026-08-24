@@ -1,0 +1,12 @@
+{
+  "name": "BPAT – Bike Parking Alliance of Toronto",
+  "short_name": "BPAT",
+  "description": "BPAT maps where Toronto is missing bike parking and gets racks installed.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#276266",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" }
+  ]
+}

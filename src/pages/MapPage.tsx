@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { MapContainer, TileLayer, CircleMarker, Popup, useMapEvents } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import Nav from '../components/Nav'
@@ -195,6 +196,11 @@ export default function MapPage() {
 
   return (
     <div className={`relative h-svh w-full overflow-hidden ${reporting && !draftPos ? '[&_.leaflet-container]:cursor-crosshair!' : ''}`}>
+      <Helmet>
+        <title>BPAT Gap Map – Bike Parking Problems in Toronto</title>
+        <meta name="description" content="BPAT's interactive map of bike parking gaps and community reports across Toronto. See where racks are missing, full, or damaged." />
+        <link rel="canonical" href="https://bpat.ca/map" />
+      </Helmet>
       <Nav />
 
       <MapContainer center={[43.695, -79.4]} zoom={12} scrollWheelZoom className="h-full w-full" zoomControl={false}>
