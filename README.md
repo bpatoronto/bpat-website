@@ -2,6 +2,8 @@
 
 Public website for BPAT, the Bike Parking Alliance of Toronto. BPAT maps where Toronto is missing bike parking, makes the case to property owners, and helps get racks in the ground.
 
+![alt text](image.png)
+
 ## Live Site
 
 - Production: https://bpat.ca/
