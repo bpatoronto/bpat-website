@@ -48,6 +48,9 @@ const DURATION_LABEL: Record<Duration, string> = {
   multiday: 'Multiple days',
 }
 
+const errorMessage = (error: unknown) =>
+  error instanceof Error ? error.message : 'Something went wrong'
+
 const ALL_ISSUES: Issue[] = ['not_provided', 'full', 'damaged', 'abandoned', 'other']
 const ALL_DURATIONS: Duration[] = ['minutes', 'hours', 'overnight', 'multiday']
 
@@ -148,7 +151,11 @@ export default function MapPage() {
   const toggleIssue = (issue: Issue) =>
     setDraftIssues((prev) => {
       const next = new Set(prev)
-      next.has(issue) ? next.delete(issue) : next.add(issue)
+      if (next.has(issue)) {
+        next.delete(issue)
+      } else {
+        next.add(issue)
+      }
       return next
     })
 
@@ -180,8 +187,8 @@ export default function MapPage() {
         ...prev,
       ])
       cancelReport()
-    } catch (e: any) {
-      alert(`Failed to submit: ${e.message}`)
+    } catch (e: unknown) {
+      alert(`Failed to submit: ${errorMessage(e)}`)
     } finally {
       setSubmitting(false)
     }
