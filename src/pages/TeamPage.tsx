@@ -18,12 +18,9 @@ const members: Member[] = [
   { name: 'Rae Mahboob', role: 'Social Media Coordinator' },
   { name: 'Richard Li', role: 'Software Developer' },
   { name: 'Ben Corrigan', role: 'Community and Stakeholder Relations' },
-  { name: 'Kyla Yu', role: 'Mapping and Infrastructure Researcher' },
   { name: 'Gregory Campos-Hohn', role: 'Mapping and Infrastructure Researcher' },
-  { name: 'Emily Villett', role: 'Mapping and Infrastructure Researcher' },
   { name: 'Rayyan Mia', role: 'Mapping and Infrastructure Researcher' },
   { name: 'Ana Marelja', role: 'Property Outreach Coordinator' },
-  { name: 'Zachary Osborn', role: 'Property Outreach Coordinator' },
   { name: 'Aaryan Dave', role: 'Grants and Partnerships Coordinator' },
   { name: 'Kyla Howe', role: 'Social Media Coordinator' },
 ]
