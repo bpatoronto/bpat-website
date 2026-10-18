@@ -2,6 +2,7 @@ import Nav from '../components/Nav'
 import Hero from '../components/Hero'
 import Ticker from '../components/Ticker'
 import Problem from '../components/Problem'
+import RequestBanner from '../components/RequestBanner'
 import Approach from '../components/Approach'
 import Owners from '../components/Owners'
 import FAQ from '../components/FAQ'
@@ -17,6 +18,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <Ticker />
+        <RequestBanner />
         <Problem />
         <Approach />
         <Owners />

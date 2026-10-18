@@ -22,6 +22,7 @@ const members: Member[] = [
   { name: 'Rayyan Mia', role: 'Mapping and Infrastructure Researcher' },
   { name: 'Ana Marelja', role: 'Property Outreach Coordinator' },
   { name: 'Aaryan Dave', role: 'Grants and Partnerships Coordinator' },
+  { name: 'Leo McNamara', role: 'Community Engagement Director' },
   { name: 'Kyla Howe', role: 'Social Media Coordinator' },
 ]
 
