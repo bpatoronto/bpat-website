@@ -206,6 +206,6 @@ https://bpat.ca/bike-bg.jpeg
 
 - The production domain is `bpat.ca`; keep canonical URLs consistent.
 - `TestBadge` is hidden on `bpat.ca` and appears on non-production hosts.
-- The app uses `BrowserRouter`, so the deployment host must support SPA fallback routing to `index.html` for `/map`, `/team`, and `/experiment`.
+- The app uses `BrowserRouter`, so the deployment host must support SPA fallback routing to `index.html` for `/map`, `/team`, and `/experiment`. The site is built on Netlify, which gets this from `public/_redirects` (`/*  /index.html  200`); without it, direct visits and refreshes on those routes return 404.
 - Google Fonts is loaded without blocking first paint (`rel="preload"` swapped to a stylesheet on load, with a `<noscript>` fallback) in `index.html`.
 - Keep generated build output in `dist/`; source changes belong in `src/`, `public/`, and project config files.
