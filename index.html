@@ -51,16 +51,27 @@
     <!-- Fonts: preconnect + only the weights actually used (300/400/500/600/700) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Loaded without blocking first paint; display=swap shows fallback text until it arrives -->
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      />
+    </noscript>
 
     <!-- Preload the LCP hero image -->
     <link
       rel="preload"
       as="image"
       href="/bike-bg.webp"
+      imagesrcset="/bike-bg-960.webp 960w, /bike-bg.webp 1600w"
+      imagesizes="100vw"
       type="image/webp"
       fetchpriority="high"
     />

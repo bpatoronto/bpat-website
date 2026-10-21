@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section id="top" className="grain relative isolate flex min-h-svh flex-col overflow-hidden">
       <picture className="absolute inset-0 -z-10">
-        <source srcSet="/bike-bg.webp" type="image/webp" />
+        <source srcSet="/bike-bg-960.webp 960w, /bike-bg.webp 1600w" sizes="100vw" type="image/webp" />
         <img
           src="/bike-bg.jpeg"
           alt=""
