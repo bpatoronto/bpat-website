@@ -83,26 +83,46 @@ npm run lint
 |   |-- index.css           # Tailwind theme, shared classes, global styles
 |   |-- assets/             # SVG artwork used by components
 |   |-- components/         # Shared page sections and UI components
-|   |-- data/               # Static spot/map data
-|   `-- pages/              # Home, map, and team routes
+|   |   `-- experiment/     # Sections used only by the experimental homepage
+|   |-- data/               # Team members, social links, static spot/map data
+|   `-- pages/              # Home, map, team, and experimental routes
 `-- .github/workflows/ci.yml
 ```
 
 ## Routes
 
-- `/`: landing page with hero, ticker, problem statement, approach, owner CTA, and FAQ.
+- `/`: landing page with hero, ticker, bike parking request banner, problem statement, approach, owner CTA, and FAQ.
 - `/map`: interactive Gap Map powered by BikeSpace API submissions.
 - `/team`: team page with member cards and headshot fallbacks.
+- `/experiment`: experimental homepage redesign, see [Experimental Homepage](#experimental-homepage).
 
-`MapPage` and `TeamPage` are lazy-loaded in `src/App.tsx` so the homepage does not load heavier secondary route code on first paint.
+`MapPage`, `TeamPage`, and `ExperimentPage` are lazy-loaded in `src/App.tsx` so the homepage does not load heavier secondary route code on first paint.
 
 ## Content And Data
 
 - Homepage sections live in `src/components/` and are assembled in `src/pages/HomePage.tsx`.
-- Team members are currently defined in `src/pages/TeamPage.tsx`.
+- Team members are defined in `src/data/team.ts`, shared by the team page and the experimental homepage.
+- Social accounts and their icons are defined in `src/data/socials.ts`.
 - Team headshots live in `public/headshots/` and are matched by lowercased, hyphenated member names, such as `richard-li.jpg`.
 - Static map spot examples live in `src/data/spots.ts`, though the live Gap Map currently uses BikeSpace submissions.
+- The hero photo ships as `public/bike-bg.webp` (1600px) and `public/bike-bg-960.webp` (960px, for phones), with `public/bike-bg.jpeg` as the fallback and social preview image. If you replace the photo, regenerate both WebP sizes and keep the `imagesrcset` preload in `index.html` in sync.
+- `public/video-poster.webp` is the poster for the YouTube short on the experimental homepage.
 - Public SEO and crawler files live in `public/robots.txt`, `public/sitemap.xml`, and `public/llms.txt`.
+
+## Experimental Homepage
+
+`/experiment` is a redesign of the homepage kept on its own route so it can be compared with `/` side by side. It is marked `noindex` and is intentionally left out of `sitemap.xml` and `llms.txt`.
+
+- Page: `src/pages/ExperimentPage.tsx`; sections: `src/components/experiment/`.
+- Styling: sentence case throughout (no uppercase or wide letter-spacing), a warm `paper` background colour defined in `src/index.css`, and `.x-*` utility classes at the bottom of that file.
+- Motion (Framer Motion, all respecting reduced-motion settings):
+  - Hero photo fades into the page.
+  - BikeSpace section: three phone mockups that settle into place as you scroll, built in HTML/SVG rather than screenshots.
+  - Team section: pins while every member rides across the screen on a bike, with their headshot as the rider's head.
+  - Request-form card near the bottom rises in once when it first comes into view.
+  - Lists fade in with a short stagger.
+- On phones the page snaps onto the YouTube short when scrolled near it. The short shows a local poster and only loads YouTube's player when pressed.
+- Nothing on `/` depends on it. To promote it, point the `/` route at `ExperimentPage`, update its in-page links from `/experiment#…` to `/#…`, and remove the `noindex` tag.
 
 ## BikeSpace API
 
@@ -186,5 +206,6 @@ https://bpat.ca/bike-bg.jpeg
 
 - The production domain is `bpat.ca`; keep canonical URLs consistent.
 - `TestBadge` is hidden on `bpat.ca` and appears on non-production hosts.
-- The app uses `BrowserRouter`, so the deployment host must support SPA fallback routing to `index.html` for `/map` and `/team`.
+- The app uses `BrowserRouter`, so the deployment host must support SPA fallback routing to `index.html` for `/map`, `/team`, and `/experiment`.
+- Google Fonts is loaded without blocking first paint (`rel="preload"` swapped to a stylesheet on load, with a `<noscript>` fallback) in `index.html`.
 - Keep generated build output in `dist/`; source changes belong in `src/`, `public/`, and project config files.
