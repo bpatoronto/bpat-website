@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage'
 // MapPage pulls in leaflet (~140KB), so it must not load on the homepage.
 const MapPage = lazy(() => import('./pages/MapPage'))
 const TeamPage = lazy(() => import('./pages/TeamPage'))
+const ExperimentPage = lazy(() => import('./pages/ExperimentPage'))
 
 /** Honour hash anchors on navigation; otherwise reset scroll per page. */
 function ScrollManager() {
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/map" element={<MapPage />} />
           <Route path="/team" element={<TeamPage />} />
+          <Route path="/experiment" element={<ExperimentPage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

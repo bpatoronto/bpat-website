@@ -15,6 +15,9 @@
   --color-pine-800: #1e4347;
   --color-pine-900: #17373a;
   --color-pine-950: #0b2123;
+
+  /* Warm off-white used by the experimental layout */
+  --color-paper: #f8f7f3;
 }
 
 html {
@@ -149,4 +152,59 @@ body {
 .animate-marquee {
   animation: marquee 32s linear infinite;
   will-change: transform;
+}
+
+/* ── Experimental layout (/experiment) ───────────────────────────── */
+
+/* Staggered opacity-only entrance for a group of siblings */
+.x-stagger > * {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.2, 0.65, 0.25, 1);
+}
+
+.x-stagger.is-visible > * {
+  opacity: 1;
+}
+
+.x-stagger.is-visible > :nth-child(2) { transition-delay: 90ms; }
+.x-stagger.is-visible > :nth-child(3) { transition-delay: 180ms; }
+.x-stagger.is-visible > :nth-child(4) { transition-delay: 270ms; }
+.x-stagger.is-visible > :nth-child(5) { transition-delay: 360ms; }
+.x-stagger.is-visible > :nth-child(n + 6) { transition-delay: 450ms; }
+
+/* Phones: let the page catch on the YouTube short when scrolled near it */
+@media (max-width: 767px) {
+  html.x-snap {
+    scroll-snap-type: y proximity;
+  }
+
+  .x-snap-target {
+    scroll-snap-align: center;
+  }
+}
+
+/* Slight idle float for the phone mockups */
+@keyframes x-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.x-bob {
+  animation: x-bob 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .x-stagger > * {
+    opacity: 1;
+    transition: none;
+  }
+
+  .x-bob {
+    animation: none;
+  }
 }
