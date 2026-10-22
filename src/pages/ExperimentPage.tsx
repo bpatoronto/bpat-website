@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import XNav from '../components/experiment/XNav'
 import XHero from '../components/experiment/XHero'
@@ -11,12 +10,6 @@ import { XOwners, XFAQ, XFooter } from '../components/experiment/XClosing'
 
 /** Experimental homepage redesign, kept on its own route for side-by-side review. */
 export default function ExperimentPage() {
-  // Enables mobile scroll-snap onto the YouTube short (see .x-snap in index.css)
-  useEffect(() => {
-    document.documentElement.classList.add('x-snap')
-    return () => document.documentElement.classList.remove('x-snap')
-  }, [])
-
   return (
     <div className="bg-paper">
       <Helmet>

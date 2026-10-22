@@ -172,17 +172,6 @@ body {
 .x-stagger.is-visible > :nth-child(5) { transition-delay: 360ms; }
 .x-stagger.is-visible > :nth-child(n + 6) { transition-delay: 450ms; }
 
-/* Phones: let the page catch on the YouTube short when scrolled near it */
-@media (max-width: 767px) {
-  html.x-snap {
-    scroll-snap-type: y proximity;
-  }
-
-  .x-snap-target {
-    scroll-snap-align: center;
-  }
-}
-
 /* Slight idle float for the phone mockups */
 @keyframes x-bob {
   0%,

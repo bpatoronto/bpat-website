@@ -70,9 +70,7 @@ export default function XProblem() {
               ))}
             </Stagger>
           </div>
-
-          {/* On phones the page catches on the video (scroll-snap) so it lands fully in view */}
-          <div className="x-snap-target lg:sticky lg:top-28 lg:self-start">
+          <div className="lg:sticky lg:top-28 lg:self-start">
             <Short />
           </div>
         </div>
