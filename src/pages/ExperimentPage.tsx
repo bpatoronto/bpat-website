@@ -1,12 +1,12 @@
 import { Helmet } from 'react-helmet-async'
-import XNav from '../components/experiment/XNav'
-import XHero from '../components/experiment/XHero'
-import XProblem from '../components/experiment/XProblem'
-import XApproach from '../components/experiment/XApproach'
-import XBikeSpace from '../components/experiment/XBikeSpace'
-import XTeam from '../components/experiment/XTeam'
-import XRequest from '../components/experiment/XRequest'
-import { XOwners, XFAQ, XFooter } from '../components/experiment/XClosing'
+import XNav from '../components/home/XNav'
+import XHero from '../components/home/XHero'
+import XProblem from '../components/home/XProblem'
+import XApproach from '../components/home/XApproach'
+import XBikeSpace from '../components/home/XBikeSpace'
+import XTeam from '../components/home/XTeam'
+import XRequest from '../components/home/XRequest'
+import { XOwners, XFAQ, XFooter } from '../components/home/XClosing'
 
 /** Experimental homepage redesign, kept on its own route for side-by-side review. */
 export default function ExperimentPage() {
