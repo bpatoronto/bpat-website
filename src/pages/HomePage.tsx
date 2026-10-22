@@ -1,33 +1,28 @@
 import Nav from '../components/Nav'
-import Hero from '../components/Hero'
-import Ticker from '../components/Ticker'
-import Problem from '../components/Problem'
-import RequestBanner from '../components/RequestBanner'
-import Approach from '../components/Approach'
-import Owners from '../components/Owners'
-import FAQ from '../components/FAQ'
-// import MapTeaser from '../components/MapTeaser' // temporarily hidden
-// import GetInvolved from '../components/GetInvolved' // temporarily hidden
 import Footer from '../components/Footer'
-import TestBadge from '../components/TestBadge'
+import XHero from '../components/home/XHero'
+import XProblem from '../components/home/XProblem'
+import XApproach from '../components/home/XApproach'
+import XBikeSpace from '../components/home/XBikeSpace'
+import XTeam from '../components/home/XTeam'
+import XRequest from '../components/home/XRequest'
+import { XOwners, XFAQ } from '../components/home/XClosing'
 
 export default function HomePage() {
   return (
-    <>
+    <div className="bg-paper">
       <Nav />
       <main>
-        <Hero />
-        <Ticker />
-        <RequestBanner />
-        <Problem />
-        <Approach />
-        <Owners />
-        <FAQ />
-        {/* <MapTeaser /> temporarily hidden */}
-        {/* <GetInvolved /> temporarily hidden */}
+        <XHero />
+        <XProblem />
+        <XApproach />
+        <XOwners />
+        <XBikeSpace />
+        <XTeam />
+        <XFAQ />
+        <XRequest />
       </main>
       <Footer />
-      <TestBadge />
-    </>
+    </div>
   )
 }

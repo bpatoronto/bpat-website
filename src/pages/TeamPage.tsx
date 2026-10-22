@@ -92,7 +92,7 @@ export default function TeamPage() {
         <meta name="description" content="Meet the BPAT team — the youth-led planners and advocates building secure bike parking across Toronto." />
         <link rel="canonical" href="https://bpat.ca/team" />
       </Helmet>
-      <Nav />
+      <Nav solid />
       <main className="relative overflow-hidden bg-pine-50 pb-24 pt-40">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.045]"

@@ -251,7 +251,7 @@ export default function MapPage() {
         <meta name="description" content="BPAT's interactive map of bike parking gaps and community reports across Toronto. See where racks are missing, full, or damaged." />
         <link rel="canonical" href="https://bpat.ca/map" />
       </Helmet>
-      <Nav />
+      <Nav solid />
 
       <MapContainer center={[43.695, -79.4]} zoom={12} scrollWheelZoom className="h-full w-full" zoomControl={false}>
         <TileLayer
