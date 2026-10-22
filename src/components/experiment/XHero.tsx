@@ -29,8 +29,9 @@ export default function XHero() {
           Let&rsquo;s rethink bike parking.
         </h1>
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/85 md:mt-8 md:text-xl">
-          BPAT maps where Toronto is missing bike parking and works directly with property owners
-          to get racks in the ground.
+          <span className="lg:hidden">The Bike Parking Alliance of Toronto</span>
+          <span className="hidden lg:inline">BPAT</span> maps where Toronto is missing bike
+          parking and works directly with property owners to get racks in the ground.
         </p>
         <div className="mt-9 md:mt-10">
           <a
