@@ -98,8 +98,8 @@ export default function XTeam() {
   const reduce = useReducedMotion()
 
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end end'] })
-  // The row leads with a screen-wide spacer, so 0% leaves the spacer on screen with
-  // every rider off the right edge and -100% puts every rider off the left edge
+  // The row leads with a half-screen spacer, so 0% starts the first rider mid-screen
+  // and -100% puts every rider off the left edge
   const x = useTransform(scrollYProgress, [0, 1], ['0%', '-100%'])
   const spin = useTransform(scrollYProgress, [0, 1], [0, 360 * 14])
 
@@ -122,7 +122,7 @@ export default function XTeam() {
           {/* the road, level with the bottom of the wheels */}
           <div className="absolute inset-x-0 top-[142px] h-px bg-pine-950/25 md:top-[199px]" />
           <motion.div style={{ x }} className="flex w-max items-start gap-8 md:gap-12">
-            <div aria-hidden="true" className="w-screen shrink-0" />
+            <div aria-hidden="true" className="w-[50vw] shrink-0" />
             {members.map((member, i) => <Rider key={member.name} member={member} index={i} spin={spin} />)}
           </motion.div>
         </div>
