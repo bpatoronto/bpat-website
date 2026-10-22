@@ -238,10 +238,10 @@ export default function MapPage() {
       : `${submissions.length.toLocaleString()} reports · ${visibleSubmissions.length.toLocaleString()} shown`
 
   const pillClass = (active: boolean) =>
-    `shrink-0 rounded-full px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.12em] transition-all ${
+    `shrink-0 rounded-lg border px-3.5 py-2 text-sm font-medium transition-colors ${
       active
-        ? 'bg-pine-600 text-white shadow-[0_6px_20px_-6px_rgba(39,98,102,0.7)]'
-        : 'border border-pine-600/20 bg-white/60 text-pine-700 hover:border-pine-600/40'
+        ? 'border-pine-950 bg-pine-950 text-white'
+        : 'border-pine-950/15 bg-white text-pine-900 hover:border-pine-950/40'
     }`
 
   return (
@@ -282,7 +282,7 @@ export default function MapPage() {
                   {sub.issues.map((issue) => (
                     <span
                       key={issue}
-                      className="rounded-full px-2.5 py-0.5 text-[0.6rem] font-semibold uppercase tracking-wider"
+                      className="rounded-md px-2 py-0.5 text-xs font-medium"
                       style={{ background: ISSUE_STYLE[issue].fillColor, color: ISSUE_STYLE[issue].color }}
                     >
                       {ISSUE_LABEL[issue]}
@@ -290,9 +290,9 @@ export default function MapPage() {
                   ))}
                 </div>
                 {sub.comments && (
-                  <p className="m-0 mt-2.5 text-xs leading-relaxed text-pine-900/80">{sub.comments}</p>
+                  <p className="m-0 mt-2.5 text-sm leading-relaxed text-pine-900/85">{sub.comments}</p>
                 )}
-                <div className="mt-2.5 flex flex-col gap-1 text-[0.6rem] text-pine-900/50">
+                <div className="mt-2.5 flex flex-col gap-1 text-xs text-pine-900/60">
                   {sub.parking_duration && <span>Duration: {DURATION_LABEL[sub.parking_duration]}</span>}
                   {sub.parking_time && (
                     <span>Issue time: {new Date(sub.parking_time).toLocaleString()}</span>
@@ -327,11 +327,11 @@ export default function MapPage() {
         {draftPos && (
           <Popup position={draftPos} maxWidth={320} eventHandlers={{ remove: cancelReport }} {...formPopupPadding}>
             <div className="w-[min(18rem,calc(100vw-6rem))] font-sans">
-              <p className="m-0 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-pine-500">
+              <p className="m-0 text-base font-semibold text-pine-950">
                 Report an issue
               </p>
 
-              <p className="m-0 mt-3 text-[0.6rem] font-semibold uppercase tracking-wider text-pine-900/60">
+              <p className="m-0 mt-3 text-xs font-medium text-pine-900/70">
                 What&rsquo;s the problem?
               </p>
               <div className="mt-1.5 flex flex-wrap gap-1.5">
@@ -340,10 +340,10 @@ export default function MapPage() {
                     key={issue}
                     type="button"
                     onClick={() => toggleIssue(issue)}
-                    className={`rounded-full border px-3 py-1.5 text-[0.6rem] md:py-1 font-semibold uppercase tracking-wider transition-colors ${
+                    className={`rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors md:py-1 ${
                       draftIssues.has(issue)
-                        ? 'border-pine-600 bg-pine-600 text-white'
-                        : 'border-pine-600/20 bg-white text-pine-700 hover:border-pine-600/40'
+                        ? 'border-pine-950 bg-pine-950 text-white'
+                        : 'border-pine-950/15 bg-white text-pine-900 hover:border-pine-950/40'
                     }`}
                   >
                     {ISSUE_LABEL[issue]}
@@ -351,7 +351,7 @@ export default function MapPage() {
                 ))}
               </div>
 
-              <p className="m-0 mt-3 text-[0.6rem] font-semibold uppercase tracking-wider text-pine-900/60">
+              <p className="m-0 mt-3 text-xs font-medium text-pine-900/70">
                 How long were you parking?
               </p>
               <div className="mt-1.5 flex flex-wrap gap-1.5">
@@ -360,10 +360,10 @@ export default function MapPage() {
                     key={d}
                     type="button"
                     onClick={() => setDraftDuration(d)}
-                    className={`rounded-full border px-3 py-1.5 text-[0.6rem] md:py-1 font-semibold uppercase tracking-wider transition-colors ${
+                    className={`rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors md:py-1 ${
                       draftDuration === d
-                        ? 'border-pine-600 bg-pine-600 text-white'
-                        : 'border-pine-600/20 bg-white text-pine-700 hover:border-pine-600/40'
+                        ? 'border-pine-950 bg-pine-950 text-white'
+                        : 'border-pine-950/15 bg-white text-pine-900 hover:border-pine-950/40'
                     }`}
                   >
                     {DURATION_LABEL[d]}
@@ -377,20 +377,20 @@ export default function MapPage() {
                 placeholder="Any details? (optional)"
                 rows={2}
                 // 16px on mobile stops iOS Safari zooming in on focus
-                className="mt-3 w-full resize-none rounded-xl border border-pine-600/25 bg-white px-3 py-2 text-base leading-relaxed md:text-xs text-pine-950 placeholder:text-pine-900/40 focus:border-pine-600 focus:outline-none"
+                className="mt-3 w-full resize-none rounded-lg border border-pine-950/20 bg-white px-3 py-2 text-base leading-relaxed text-pine-950 placeholder:text-pine-900/40 focus:border-pine-950 md:text-sm focus:outline-none"
               />
 
               <div className="mt-2.5 flex gap-2">
                 <button
                   onClick={submitReport}
                   disabled={draftIssues.size === 0 || submitting}
-                  className="rounded-full bg-pine-600 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-pine-700 md:py-1.5 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="rounded-lg bg-pine-950 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-pine-800 md:py-1.5 disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   {submitting ? 'Submitting…' : 'Submit report'}
                 </button>
                 <button
                   onClick={cancelReport}
-                  className="rounded-full border border-pine-600/25 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-pine-700 transition-colors hover:border-pine-600/50 md:py-1.5"
+                  className="rounded-lg border border-pine-950/20 px-4 py-2 text-sm font-medium text-pine-900 transition-colors hover:border-pine-950/50 md:py-1.5"
                 >
                   Cancel
                 </button>
@@ -403,14 +403,13 @@ export default function MapPage() {
       {/* ── Glass control panel ─────────────────────────────────────── */}
       {/* Phones: compact card (title, count, filter row) that expands for details.
           Desktop: everything always shown. */}
-      <aside className={`${draftPos ? 'max-md:hidden' : ''} glass absolute left-3 right-3 top-24 z-1000 max-h-[calc(100svh-12rem)] overflow-y-auto p-4 md:left-8 md:right-auto md:top-28 md:max-h-[calc(100svh-8rem)] md:w-88 md:p-7`}>
+      <aside className={`${draftPos ? 'max-md:hidden' : ''} absolute left-3 right-3 top-24 z-1000 max-h-[calc(100svh-12rem)] overflow-y-auto p-4 md:left-8 md:right-auto md:top-28 md:max-h-[calc(100svh-8rem)] md:w-88 md:p-7 rounded-[22px] border border-pine-950/10 bg-paper shadow-[0_30px_70px_-30px_rgba(11,33,35,0.45)]`}>
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <p className="eyebrow hidden text-pine-600 md:block">Bike parking map</p>
-            <h1 className="text-base font-bold uppercase tracking-[0.06em] text-pine-950 md:mt-3 md:text-2xl">
+            <h1 className="text-lg font-semibold tracking-[-0.015em] text-pine-950 md:text-3xl md:leading-[1.1]">
               Community reports
             </h1>
-            <p className="mt-0.5 text-[0.6rem] font-medium uppercase tracking-[0.14em] text-pine-700/60 md:hidden">
+            <p className="mt-0.5 text-xs text-pine-900/65 md:hidden">
               {statusText}
             </p>
           </div>
@@ -420,7 +419,7 @@ export default function MapPage() {
             aria-expanded={panelOpen}
             aria-controls="map-panel-details"
             aria-label={panelOpen ? 'Hide map details' : 'Show map details'}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-pine-600/20 bg-white/70 text-pine-700 md:hidden"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-pine-950/15 bg-white text-pine-900 md:hidden"
           >
             <svg viewBox="0 0 24 24" className={`h-4 w-4 transition-transform ${panelOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M6 9l6 6 6-6" />
@@ -428,7 +427,7 @@ export default function MapPage() {
           </button>
         </div>
 
-        <p className={`${panelOpen ? '' : 'hidden'} mt-3 text-xs font-light leading-relaxed text-pine-900/70 md:block md:text-sm`}>
+        <p className={`${panelOpen ? '' : 'hidden'} mt-3 text-sm leading-relaxed text-pine-900/80 md:block md:text-base`}>
           Crowdsourced reports of bike parking problems across Toronto, powered by BikeSpace.
         </p>
 
@@ -443,23 +442,23 @@ export default function MapPage() {
         </div>
 
         <div id="map-panel-details" className={`${panelOpen ? '' : 'hidden'} md:block`}>
-          <ul className="mt-4 flex flex-col gap-2 border-t border-pine-600/10 pt-4 md:mt-5">
+          <ul className="mt-4 flex flex-col gap-2 border-t border-pine-950/10 pt-4 md:mt-5">
             {ALL_ISSUES.map((issue) => (
-              <li key={issue} className="flex items-center gap-2.5 text-xs font-medium text-pine-900/80">
+              <li key={issue} className="flex items-center gap-2.5 text-sm text-pine-900/85">
                 <span
                   className="h-3 w-3 shrink-0 rounded-full border-2"
                   style={{ borderColor: ISSUE_STYLE[issue].color, backgroundColor: ISSUE_STYLE[issue].fillColor }}
                 />
                 {ISSUE_LABEL[issue]}
-                <span className="ml-auto tabular-nums text-pine-900/40">{stats[issue]}</span>
+                <span className="ml-auto tabular-nums text-pine-900/55">{stats[issue]}</span>
               </li>
             ))}
           </ul>
 
-          <p className="mt-4 hidden text-[0.65rem] font-medium uppercase tracking-[0.18em] text-pine-700/50 md:block">
+          <p className="mt-4 hidden text-sm text-pine-900/65 md:block">
             {statusText}
           </p>
-          <p className="mt-3 text-[0.6rem] text-pine-700/40 md:mt-1">
+          <p className="mt-3 text-xs text-pine-900/60 md:mt-1">
             Data from{' '}
             <a href="https://bikespace.ca" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-pine-600">
               BikeSpace
@@ -472,7 +471,7 @@ export default function MapPage() {
       {!draftPos && (
         <div className="absolute bottom-6 left-1/2 z-1000 flex w-max max-w-[calc(100vw-2rem)] -translate-x-1/2 flex-col items-center gap-2.5">
           {reporting && (
-            <p className="rounded-full bg-pine-950/80 px-4 py-2 text-center text-xs font-medium text-white shadow-xl md:hidden">
+            <p className="rounded-lg bg-pine-950/90 px-4 py-2 text-center text-sm font-medium text-white shadow-xl md:hidden">
               Tap the map to mark the spot
             </p>
           )}
@@ -485,7 +484,7 @@ export default function MapPage() {
                 setReporting(true)
               }
             }}
-            className={`${reporting ? 'btn-glass bg-white/90' : 'btn-solid'} px-7! text-center shadow-2xl md:whitespace-nowrap`}
+            className={`${reporting ? 'border border-pine-950/20 bg-white text-pine-950 hover:bg-pine-50' : 'bg-pine-950 text-white hover:bg-pine-800'} rounded-lg px-5 py-3.5 text-center text-[0.95rem] font-medium shadow-[0_20px_50px_-20px_rgba(11,33,35,0.6)] transition-colors md:whitespace-nowrap`}
           >
             {reporting ? (
               <>
