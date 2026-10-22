@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from 'framer-motion'
-import { members, headshotOf, initialsOf, type Member } from '../../data/team'
+import { members, headshotThumbOf, initialsOf, type Member } from '../../data/team'
 import { Arrow } from './Stagger'
 
 const shirts = ['#276266', '#c9733f', '#3f8589', '#5b6b8c', '#a8553f', '#2f4f4f', '#b8902f']
@@ -59,9 +59,11 @@ function Rider({ member, index, spin }: { member: Member; index: number; spin: M
           </span>
         ) : (
           <img
-            src={headshotOf(member.name)}
+            src={headshotThumbOf(member.name)}
             alt=""
-            loading="lazy"
+            width={160}
+            height={160}
+            fetchPriority="low"
             decoding="async"
             onError={() => setFailed(true)}
             className="absolute left-[15%] top-[-3%] aspect-square w-[38%] rounded-full bg-pine-600 object-cover ring-2 ring-paper"

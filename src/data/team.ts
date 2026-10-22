@@ -22,6 +22,10 @@ export const members: Member[] = [
 export const headshotOf = (name: string) =>
   `/headshots/${name.toLowerCase().replace(/\s+/g, '-')}.jpg`
 
+/** 160px square webp for small avatars (the full photos are 50-120KB each) */
+export const headshotThumbOf = (name: string) =>
+  `/headshots/sm/${name.toLowerCase().replace(/\s+/g, '-')}.webp`
+
 export const initialsOf = (name: string) =>
   name
     .split(/\s+/)
