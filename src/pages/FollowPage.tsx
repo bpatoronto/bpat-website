@@ -21,9 +21,15 @@ const request: LinkItem = {
     path: "M6 2h9l5 5v15H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 1v5h5M8 12h8M8 16h8M8 20h5"
 }
 
+const email: LinkItem = {
+    label: 'Email',
+    href: 'mailto:info@bpat.ca',
+    path: "M3 5h18v14H3V5Zm0 1 9 7 9-7"
+}
+
 const focusRing = 'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
 
-const socialLinks: LinkItem[] = [...socials, request]
+const socialLinks: LinkItem[] = [email, ...socials, request]
 
 function Icon({ path }: { path: string }) {
     return (
