@@ -1,6 +1,8 @@
 import { LogoMark } from '../components/Logo'
 import { socials } from '../data/socials'
 import { useEffect } from 'react'
+import { FORM_URL } from '../components/home/Stagger'
+import { Helmet } from "react-helmet-async"
 
 export type LinkItem = {
     label: string,
@@ -17,7 +19,7 @@ const github: LinkItem = {
 
 const request: LinkItem = {
     label: 'Request Bike Parking',
-    href: 'https://docs.google.com/forms/d/e/1FAIpQLSeIzRvM1VL7rkrQ9ZaurMjTK3pBn1l3y99egzixBYhRsMswJQ/viewform',
+    href: FORM_URL,
     path: "M6 2h9l5 5v15H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 1v5h5M8 12h8M8 16h8M8 20h5"
 }
 
@@ -40,47 +42,52 @@ function Icon({ path }: { path: string }) {
 }
 
 export default function FollowPage() {
-    useEffect(() => {
-        document.title = 'Follow Bike Parking Alliance of Toronto'
-    })
+    //useEffect(() => {
+    //    document.title = 'Follow Bike Parking Alliance of Toronto'
+    //})
 
     return (
-        <main className="flex min-h-screen items-center justify-center bg-paper px-4 py-12">
-            <div className="w-full max-w-sm rounded-[22px] bg-pine-950 p-8 text-center text-white shadow-[0_50px_90px_-40px_rgba(11,33,35,0.7)] md:p-10">
-                <LogoMark className="mx-auto h-12 w-12" />
-                <h1 className="mt-4 text-2xl font-semibold tracking-[-0.015em]">BPAT</h1>
-                <p className="mt-2 leading-relaxed text-white/65">All our links.</p>
+        <>
+            <Helmet>
+                <title>Follow Bike Parking Alliance of Toronto</title>
+            </Helmet>
+            <main className="flex min-h-screen items-center justify-center bg-paper px-4 py-12">
+                <div className="w-full max-w-sm rounded-[22px] bg-pine-950 p-8 text-center text-white shadow-[0_50px_90px_-40px_rgba(11,33,35,0.7)] md:p-10">
+                    <LogoMark className="mx-auto h-12 w-12" />
+                    <h1 className="mt-4 text-2xl font-semibold tracking-[-0.015em]">BPAT</h1>
+                    <p className="mt-2 leading-relaxed text-white/65">All our links.</p>
 
-                {/*<div className="mt-6 flex justify-center gap-3">
-                    {socialLinks.map((link) => (
-                        <a
-                            key={link.label}
-                            href={link.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={link.label}
-                            className={`flex h-11 w-11 items-center justify-center rounded-full bg-white text-pine-950 transition-colors hover:bg-pine-100 ${focusRing}`}
-                        >
-                            <Icon path={link.path} />
-                        </a>
-                    ))}
-                </div> */}
+                    {/*<div className="mt-6 flex justify-center gap-3">
+                        {socialLinks.map((link) => (
+                            <a
+                                key={link.label}
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={link.label}
+                                className={`flex h-11 w-11 items-center justify-center rounded-full bg-white text-pine-950 transition-colors hover:bg-pine-100 ${focusRing}`}
+                            >
+                                <Icon path={link.path} />
+                            </a>
+                        ))}
+                    </div> */}
 
-                <div className="mt-8 flex flex-col gap-3">
-                    {socialLinks.map((link) => (
-                        <a
-                            key={link.label}
-                            href={link.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`flex items-center justify-center gap-2.5 rounded-lg bg-white px-4 py-3.5 font-medium text-pine-950 transition-colors hover:bg-pine-100 ${focusRing}`}
-                        >
-                            <Icon path={link.path} />
-                            {link.label}
-                        </a>
-                    ))}
+                    <div className="mt-8 flex flex-col gap-3">
+                        {socialLinks.map((link) => (
+                            <a
+                                key={link.label}
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`flex items-center justify-center gap-2.5 rounded-lg bg-white px-4 py-3.5 font-medium text-pine-950 transition-colors hover:bg-pine-100 ${focusRing}`}
+                            >
+                                <Icon path={link.path} />
+                                {link.label}
+                            </a>
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
+        </>
     )
 }
