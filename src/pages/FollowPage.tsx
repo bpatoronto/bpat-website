@@ -1,6 +1,5 @@
 import { LogoMark } from '../components/Logo'
 import { socials } from '../data/socials'
-import { useEffect } from 'react'
 import { FORM_URL } from '../components/home/Stagger'
 import { Helmet } from "react-helmet-async"
 
