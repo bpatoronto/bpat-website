@@ -24,7 +24,7 @@ const request: LinkItem = {
 
 const email: LinkItem = {
     label: 'Email',
-    href: 'mailto:info@bpat.ca',
+    href: 'mailto:bpat.toronto@gmail.com',
     path: "M3 5h18v14H3V5Zm0 1 9 7 9-7"
 }
 
