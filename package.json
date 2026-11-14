@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@maplibre/maplibre-gl-leaflet": "^0.1.4",
     "@tailwindcss/vite": "^4.3.0",
     "framer-motion": "^12.42.2",
     "leaflet": "^1.9.4",
+    "maplibre-gl": "^6.15.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-helmet-async": "^3.0.0",

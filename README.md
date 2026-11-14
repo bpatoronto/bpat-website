@@ -25,7 +25,7 @@ Deployment platform details are not stored in this repo. The repo only contains 
 - React Router
 - Framer Motion
 - React Helmet Async
-- Leaflet and React Leaflet for the map
+- Leaflet and React Leaflet for the map, with an OpenFreeMap vector basemap drawn by MapLibre GL
 
 ## Requirements
 
@@ -135,6 +135,15 @@ Used endpoints:
 - `POST /submissions`
 
 There are no local environment variables for this API right now; the base URL is hardcoded in `src/pages/MapPage.tsx`.
+
+## Basemap
+
+The Gap Map's streets come from OpenFreeMap's Positron style (`https://tiles.openfreemap.org/styles/positron`), which needs no API key or account. The style's attribution is added to the map automatically.
+
+- MapLibre GL draws the vector tiles. It is about 1 MB, so `src/components/basemapLayer.ts` is loaded on demand after the page and markers render.
+- MapLibre 6 looks for its worker script next to its own file, which bundling breaks, so `basemapLayer.ts` points it at the copy Vite emits (`assets/maplibre-gl-worker-*.mjs`).
+- Report markers are drawn on one canvas (`preferCanvas`) instead of 1,500+ SVG elements.
+- CARTO's free basemaps were used before but now require an API key.
 
 ## SEO Notes
 

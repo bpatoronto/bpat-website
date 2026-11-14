@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { MapContainer, TileLayer, CircleMarker, Popup, useMapEvents } from 'react-leaflet'
+import { MapContainer, CircleMarker, Popup, useMap, useMapEvents } from 'react-leaflet'
+import type { Layer } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import Nav from '../components/Nav'
 // import { spots, styleFor, photoFor, labelFor, type Category } from '../data/spots'
@@ -103,6 +104,30 @@ function ClickCapture({ active, onPick, onInteract }: {
     },
     popupopen: onInteract,
   })
+  return null
+}
+
+// OpenFreeMap vector tiles need no API key, and the layer adds the style's own
+// attribution. MapLibre is ~1 MB, so it loads after the page and markers
+// instead of holding them up.
+const BASEMAP_STYLE = 'https://tiles.openfreemap.org/styles/positron'
+
+function Basemap() {
+  const map = useMap()
+  useEffect(() => {
+    let layer: Layer | undefined
+    let cancelled = false
+    import('../components/basemapLayer')
+      .then(({ maplibreGL }) => {
+        if (!cancelled) layer = maplibreGL({ style: BASEMAP_STYLE, validateStyle: false, fadeDuration: 0 }).addTo(map)
+      })
+      // No WebGL or a failed chunk load: keep the markers, just without streets.
+      .catch((err) => console.warn('Basemap failed to load', err))
+    return () => {
+      cancelled = true
+      layer?.remove()
+    }
+  }, [map])
   return null
 }
 
@@ -250,14 +275,12 @@ export default function MapPage() {
         <title>BPAT Gap Map – Bike Parking Problems in Toronto</title>
         <meta name="description" content="BPAT's interactive map of bike parking gaps and community reports across Toronto. See where racks are missing, full, or damaged." />
         <link rel="canonical" href="https://bpat.ca/map" />
+        <link rel="preconnect" href="https://tiles.openfreemap.org" crossOrigin="" />
       </Helmet>
       <Nav solid />
 
-      <MapContainer center={[43.695, -79.4]} zoom={12} scrollWheelZoom className="h-full w-full" zoomControl={false}>
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
-          url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-        />
+      <MapContainer center={[43.695, -79.4]} zoom={12} scrollWheelZoom preferCanvas className="h-full w-full bg-[#f2f3f0]!" zoomControl={false}>
+        <Basemap />
         <ClickCapture
           active={picking}
           onPick={setDraftPos}
@@ -292,7 +315,7 @@ export default function MapPage() {
                 {sub.comments && (
                   <p className="m-0 mt-2.5 text-sm leading-relaxed text-pine-900/85">{sub.comments}</p>
                 )}
-                <div className="mt-2.5 flex flex-col gap-1 text-xs text-pine-900/60">
+                <div className="mt-2.5 flex flex-col gap-1 text-xs text-pine-900/75">
                   {sub.parking_duration && <span>Duration: {DURATION_LABEL[sub.parking_duration]}</span>}
                   {sub.parking_time && (
                     <span>Issue time: {new Date(sub.parking_time).toLocaleString()}</span>
@@ -301,7 +324,7 @@ export default function MapPage() {
                     <span>Reported: {new Date(sub.submitted_datetime).toLocaleString()}</span>
                   )}
                   {sub.user && <span>By: {sub.user}</span>}
-                  <span className="text-pine-900/30">ID #{sub.id} · v{sub.version}</span>
+                  <span className="text-pine-900/75">ID #{sub.id} · v{sub.version}</span>
                 </div>
               </div>
             </Popup>
@@ -409,7 +432,7 @@ export default function MapPage() {
             <h1 className="text-lg font-semibold tracking-[-0.015em] text-pine-950 md:text-3xl md:leading-[1.1]">
               Community reports
             </h1>
-            <p className="mt-0.5 text-xs text-pine-900/65 md:hidden">
+            <p className="mt-0.5 text-xs text-pine-900/75 md:hidden">
               {statusText}
             </p>
           </div>
@@ -450,15 +473,15 @@ export default function MapPage() {
                   style={{ borderColor: ISSUE_STYLE[issue].color, backgroundColor: ISSUE_STYLE[issue].fillColor }}
                 />
                 {ISSUE_LABEL[issue]}
-                <span className="ml-auto tabular-nums text-pine-900/55">{stats[issue]}</span>
+                <span className="ml-auto tabular-nums text-pine-900/75">{stats[issue]}</span>
               </li>
             ))}
           </ul>
 
-          <p className="mt-4 hidden text-sm text-pine-900/65 md:block">
+          <p className="mt-4 hidden text-sm text-pine-900/75 md:block">
             {statusText}
           </p>
-          <p className="mt-3 text-xs text-pine-900/60 md:mt-1">
+          <p className="mt-3 text-xs text-pine-900/75 md:mt-1">
             Data from{' '}
             <a href="https://bikespace.ca" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-pine-600">
               BikeSpace
