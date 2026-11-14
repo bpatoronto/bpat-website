@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import XHero from '../components/home/XHero'
@@ -11,6 +12,10 @@ import { XOwners, XFAQ } from '../components/home/XClosing'
 export default function HomePage() {
   return (
     <div className="bg-paper">
+      <Helmet>
+        <title>BPAT – Bike Parking Alliance of Toronto | Secure Bike Parking for Every Ride</title>
+        <link rel="canonical" href="https://bpat.ca/" />
+      </Helmet>
       <Nav />
       <main>
         <XHero />
